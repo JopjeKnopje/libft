@@ -13,11 +13,12 @@ x strlcat
 • toupper
 • tolower
 • strchr
-strrchr
-strncmp
-memchr
-memcmp
-strnstr
+• strrchr
+x strncmp
+• memchr
+• memcmp
+• strnstr
+------ malloc for these
 calloc
 strduptoi
 

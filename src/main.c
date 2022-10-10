@@ -6,7 +6,7 @@
 /*   By: jboeve <jboeve@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/05 09:00:19 by jboeve        #+#    #+#                 */
-/*   Updated: 2022/10/10 13:42:33 by jboeve        ########   odam.nl         */
+/*   Updated: 2022/10/10 15:39:44 by jboeve        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -244,6 +244,51 @@ void test_ft_strrchr()
 	printf("%s | %s\n", str, index);
 }
 
+// TODO Doens't work
+void test_ft_strncmp()
+{
+	const char *s1 = "test123";
+	const char *s2 = "test1";
+	const size_t len = 5;
+	int diff = ft_strncmp(s1, s2, len);
+	printf("s1 %s | s2 %s | diff %d\n", s1, s2, diff);
+	diff = strncmp(s1, s2, len);
+	printf("s1 %s | s2 %s | diff %d\n", s1, s2, diff);
+}
+
+void test_ft_memchr()
+{
+	const char *str = "test123";
+	const char key = '2';
+	char *ft_index = ft_memchr(str, key, ft_strlen(str));
+	printf("%s | %s\n", str, ft_index);
+	char *index = memchr(str, key, strlen(str));
+	printf("%s | %s\n", str, index);
+}
+
+void test_ft_memcmp()
+{
+	const char *s1 = "test123";
+	const char *s2 = "test123";
+	const size_t len = 123;
+	int diff = ft_memcmp(s1, s2, len);
+	printf("s1 %s | s2 %s | diff %d\n", s1, s2, diff);
+	diff = memcmp(s1, s2, len);
+	printf("s1 %s | s2 %s | diff %d\n", s1, s2, diff);
+}
+
+void test_ft_strnstr()
+{
+	const char *s1 = "test123";
+	const char *s2 = "53";
+	size_t len = 5;
+	char *diff = ft_strnstr(s1, s2, len);
+	printf("s1 %s | s2 %s | diff %s\n", s1, s2, diff);
+	diff = strnstr(s1, s2, len);
+	printf("s1 %s | s2 %s | diff %s\n", s1, s2, diff);
+		
+}
+
 int	main()
 {
 	// test_ft_isalpha();
@@ -261,8 +306,12 @@ int	main()
 	// test_ft_strlcat(ft_strlcat);
 	// test_ft_toupper();
 	// test_ft_tolower();
-	test_ft_strchr();
-	test_ft_strrchr();
+	// test_ft_strchr();
+	// test_ft_strrchr();
+	// test_ft_strncmp();
+	// test_ft_memchr();
+	// test_ft_memcmp();
+	test_ft_strnstr();
 	return 0;
 }
 
