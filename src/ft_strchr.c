@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strlcat.c                                       :+:    :+:            */
+/*   ft_strchr.c                                        :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: jboeve <jboeve@student.codam.nl>             +#+                     */
+/*   By: joppe <jboeve@student.codam.nl>              +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/10/06 11:49:21 by jboeve        #+#    #+#                 */
-/*   Updated: 2022/10/10 10:02:46 by joppe         ########   odam.nl         */
+/*   Created: 2022/10/10 10:24:25 by joppe         #+#    #+#                 */
+/*   Updated: 2022/10/10 10:32:45 by joppe         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include "libft.h"
 
-// termination byte should be included in size
-size_t ft_strlcat(char *dest, const char *src, size_t size)
+char *ft_strchr(const char *s, int c)
 {
-	size_t	i;
-	int offset;
+	int i;
 
 	i = 0;
-	offset = ft_strlen(src);
-	while (dest[i] && size > 0)
+	while (s[i])
 	{
-		dest[offset + i] = src[i];
-		i++;
+		if (s[i] == c)
+			break;
 	}
-	dest[offset + i] = 0;
-
-	return (i);
+	char *tmp = (char*) (s + i);
+	return (tmp);
 }

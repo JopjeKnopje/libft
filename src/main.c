@@ -6,7 +6,7 @@
 /*   By: jboeve <jboeve@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/05 09:00:19 by jboeve        #+#    #+#                 */
-/*   Updated: 2022/10/06 13:27:00 by joppe         ########   odam.nl         */
+/*   Updated: 2022/10/10 10:35:01 by joppe         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -178,7 +178,7 @@ void test_ft_strlcat()
 
 	char *ft_s2 = strdup("appended");
 	// int len = ft_strlen(ft_s1) + ft_strlen(ft_s2);
-	int len = 1;
+	int len = 4;
 
 	printf("ft_s1 %s \t ft_s2 %s \n", ft_s1, ft_s2);
 	int output = ft_strlcat(ft_s2, ft_s1, len);
@@ -205,6 +205,33 @@ void test_ft_strlcat()
 	
 }
 
+void test_ft_toupper()
+{
+	for (int i = 0; i < 255; i++) 
+	{
+		char ft_c = (char) ft_toupper(i);
+		char c = (char) toupper(i);
+		printf("ft \t %c \t std \t %c\n", ft_c, c);
+	}
+}
+
+void test_ft_tolower()
+{
+	for (int i = 0; i < 255; i++) 
+	{
+		char ft_c = (char) ft_tolower(i);
+		char c = (char) tolower(i);
+		printf("ft \t %c \t std \t %c\n", ft_c, c);
+	}
+}
+
+void test_ft_strchr()
+{
+	const char *str = "test123";
+	int index = ft_strchr(str, '1');
+	printf("%s | %c\n", str, index);
+}
+
 int	main()
 {
 	// test_ft_isalpha();
@@ -218,8 +245,10 @@ int	main()
 	// test_ft_memcpy();
 	// test_ft_memmove();
 	// test_ft_strlcpy();
-	test_ft_strlcat();
-
+	// test_ft_strlcat();
+	// test_ft_toupper();
+	// test_ft_tolower();
+	test_ft_strchr();
 	return 0;
 }
 

@@ -9,10 +9,10 @@
 • memcpy
 • memmove
 • strlcpy
-strlcat
-toupper
-tolower
-strchr
+x strlcat
+• toupper
+• tolower
+x strchr
 strrchr
 strncmp
 memchr
