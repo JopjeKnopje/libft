@@ -1,37 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strlcat.c                                       :+:    :+:            */
+/*   ft_strrchr.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jboeve <jboeve@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/10/06 11:49:21 by jboeve        #+#    #+#                 */
-/*   Updated: 2022/10/10 13:24:08 by jboeve        ########   odam.nl         */
+/*   Created: 2022/10/10 13:28:56 by jboeve        #+#    #+#                 */
+/*   Updated: 2022/10/10 13:41:46 by jboeve        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_strlcat(char *dest, const char *src, size_t size)
+char *ft_strrchr(const char *s, int c)
 {
-	size_t i;
-	size_t j;
+	int	i;
 
-	i = 0;
-	j = 0;
-	while (dest[i])
-		i++;
-	while (src[j])
-		j++;
-
-
-	j = 0;
-	while (src[j] && j + i < size)
+	i = ft_strlen(s);
+	while (i)
 	{
-		dest[i + j] = src[j];
-		j++;
+		if (s[i] == c)	
+			return (char *) (s + i);
+		i--;
 	}
-	dest[j + i] = 0;
-
-	return (0);
+	return 0;
 }

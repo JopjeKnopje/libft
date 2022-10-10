@@ -12,7 +12,7 @@
 x strlcat
 • toupper
 • tolower
-x strchr
+• strchr
 strrchr
 strncmp
 memchr

@@ -6,7 +6,7 @@
 /*   By: jboeve <jboeve@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/05 09:00:19 by jboeve        #+#    #+#                 */
-/*   Updated: 2022/10/10 10:35:01 by joppe         ########   odam.nl         */
+/*   Updated: 2022/10/10 13:42:33 by jboeve        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -150,12 +150,13 @@ void test_ft_memmove()
 void test_ft_strlcpy()
 {
 	char *ft_s1 = strdup("test123");
-	int len = ft_strlen(ft_s1);
+	// int len = ft_strlen(ft_s1) + 1;
+	int len = 4;
 	char *ft_s2 = malloc((sizeof(char) * len));
 	
 	printf("ft_s1 %s \t ft_s2 %s \n", ft_s1, ft_s2);
 	int output = ft_strlcpy(ft_s2, ft_s1, len);
-	printf(" t_s1 %s \t ft_s2 %s \n", ft_s1, ft_s2);
+	printf("ft_s1 %s \t ft_s2 %s \n", ft_s1, ft_s2);
 	printf("return val %d\n", output);
 
 	printf("----------------------------------------------------------\n");
@@ -172,36 +173,34 @@ void test_ft_strlcpy()
 
 void test_ft_strlcat()
 {
-	const char *base_s = "test123";
-	char *ft_s1 = malloc(ft_strlen(base_s) + 0);
-	ft_strlcpy(ft_s1, base_s, ft_strlen(base_s) + 1);
-
-	char *ft_s2 = strdup("appended");
-	// int len = ft_strlen(ft_s1) + ft_strlen(ft_s2);
+	const char *ft_text1 = "test123";
+	const char *ft_text2 = "added!";
+	char *ft_s1 = malloc(ft_strlen(ft_text1) + ft_strlen(ft_text2) + 1);
+	ft_strlcpy(ft_s1, ft_text1, strlen(ft_text1) + 1);
 	int len = 4;
 
-	printf("ft_s1 %s \t ft_s2 %s \n", ft_s1, ft_s2);
-	int output = ft_strlcat(ft_s2, ft_s1, len);
-	printf("ft_s1 %s \t ft_s2 %s \n", ft_s1, ft_s2);
-	printf("return val %d\n", output);
-	
+	printf("ft %s \t ft %s \n", ft_text1, ft_s1);
+	int ret = ft_strlcat(ft_s1, ft_text2, len);
+	printf("ft %s \t ft %s \n", ft_text1, ft_s1);
+	printf("ft %d\n", ret);
+
 	free(ft_s1);
-	free(ft_s2);
 
 	printf("----------------------------------------------------------\n");
 
-	char *s1 = malloc(strlen(base_s) + 0);
-	strlcpy(s1, base_s, strlen(base_s) + 1);
-	char *s2 = strdup("appended");
-	// len = ft_strlen(s1) + ft_strlen(s2);
-	
-	printf("s1 %s \t s2 %s \n", s1, s2);
-	output = strlcat(s2, s1, len);
-	printf("s1 %s \t s2 %s \n", s1, s2);
-	printf("return val %d\n", output);
+	const char *text1 = "test123";
+	const char *text2 = "added!";
+	char *s1 = malloc(ft_strlen(text1) + ft_strlen(text2) + 1);
+	ft_strlcpy(s1, text1, strlen(text1) + 1);
+
+	printf("libc %s \t libc %s \n", text1, s1);
+	ret = strlcat(s1, text2, len);
+	printf("libc %s \t libc %s \n", text1, s1);
+	printf("ft %d\n", ret);
 
 	free(s1);
-	free(s2);
+
+
 	
 }
 
@@ -228,8 +227,21 @@ void test_ft_tolower()
 void test_ft_strchr()
 {
 	const char *str = "test123";
-	int index = ft_strchr(str, '1');
-	printf("%s | %c\n", str, index);
+	const char key = 't';
+	char *ft_index = ft_strchr(str, key);
+	printf("%s | %s\n", str, ft_index);
+	char *index = strchr(str, key);
+	printf("%s | %s\n", str, index);
+}
+
+void test_ft_strrchr()
+{
+	const char *str = "test123";
+	const char key = 't';
+	char *ft_index = ft_strrchr(str, key);
+	printf("%s | %s\n", str, ft_index);
+	char *index = strrchr(str, key);
+	printf("%s | %s\n", str, index);
 }
 
 int	main()
@@ -246,9 +258,11 @@ int	main()
 	// test_ft_memmove();
 	// test_ft_strlcpy();
 	// test_ft_strlcat();
+	// test_ft_strlcat(ft_strlcat);
 	// test_ft_toupper();
 	// test_ft_tolower();
 	test_ft_strchr();
+	test_ft_strrchr();
 	return 0;
 }
 
