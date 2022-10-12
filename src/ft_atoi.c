@@ -6,23 +6,45 @@
 /*   By: joppe <jboeve@student.codam.nl>              +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/12 09:41:09 by joppe         #+#    #+#                 */
-/*   Updated: 2022/10/12 10:03:09 by joppe         ########   odam.nl         */
+/*   Updated: 2022/10/12 11:29:03 by jboeve        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 
-int ft_atoi(const char *nptr)
+int ft_atoi(const char *s)
 {
-	int num = 0;
-	
-	printf("input %s\n", nptr);
+	int num;
+	int	i;
+	int sign;
 
-	for (int i = 0; nptr[i] != '\0'; ++i)
+	i = 0;
+	num = 0;
+	sign = 0;
+	while (s[i] == ' ')
 	{
-		num = num * 10 + nptr[i] - '0';
+		i++;
 	}
+	if (s[i] == '-' && sign == 0)
+	{
+		sign = -1;
+		i++;
+	}
+	if (s[i] == '+' && sign == 0)
+	{
+		sign = 1;
+		i++;
+	}
+	if (sign == 0)
+		sign = 1;
 
-	return num;
+	while (s[i])
+	{
+		if (!ft_isdigit(s[i]))
+			break;
+		num = num * 10 + s[i] - '0';
+		i++;
+	}
+	return num * sign;
 }

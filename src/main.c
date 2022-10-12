@@ -6,7 +6,7 @@
 /*   By: jboeve <jboeve@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/05 09:00:19 by jboeve        #+#    #+#                 */
-/*   Updated: 2022/10/12 09:52:39 by joppe         ########   odam.nl         */
+/*   Updated: 2022/10/12 11:30:08 by jboeve        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -311,10 +311,28 @@ void test_ft_strdup()
 	printf("og %p | new %p\n", text, ret);
 }
 
+#define assert__(x) for ( ; !(x) ; assert(x) )
+
+void test_ft_atoi_assert(const char *s)
+{
+	int ft = ft_atoi(s);
+	int reg = atoi(s);
+	printf("with ft_atoi(%s) == atoi(%s)\n", s, s);
+	printf("(%d) == (%d)\n", ft, reg);
+	printf("\n");
+	assert(ft == reg);
+}
+
 void test_ft_atoi()
 {
-	const char *str1 = "12345";
-	printf("ft_atoi \t %d | atoi \t\t %d\n", ft_atoi(str1), atoi(str1));
+	test_stuff("12345");
+	test_stuff("-12345");
+	test_stuff("123 45");
+	test_stuff("      --+-123 45");
+	test_stuff("+12345");
+	test_stuff("+ 123 45");
+	test_stuff(" +123 45");
+	test_stuff("123a45");
 }
 
 int	main()

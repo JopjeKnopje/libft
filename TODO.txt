@@ -18,7 +18,7 @@ x strncmp
 • memchr
 • memcmp
 • strnstr
-atoi
+• atoi
 -- malloc for these
 O calloc
 • strdup

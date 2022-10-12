@@ -3,12 +3,13 @@
 /*                                                        ::::::::            */
 /*   libft.h                                            :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: joppe <marvin@42.fr>                         +#+                     */
+/*   By: jboeve <jboeve@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/10/05 15:05:40 by joppe         #+#    #+#                 */
-/*   Updated: 2022/10/12 09:41:36 by joppe         ########   odam.nl         */
+/*   Created: 2022/10/12 10:41:54 by jboeve        #+#    #+#                 */
+/*   Updated: 2022/10/12 11:30:33 by jboeve        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 
 #ifndef LIBFT_H
@@ -21,8 +22,9 @@
 #include <ctype.h>
 #include <string.h>
 #include <assert.h>
-#include "string.h"
-
+#include <limits.h>
+// assert with message
+#define assert__(x) for ( ; !(x) ; assert(x) )
 
 // TODO Add doc in the header file
 int		ft_isalpha(int c);
