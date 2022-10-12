@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_calloc.c                                        :+:    :+:            */
+/*   ft_atoi.c                                          :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: joppe <jboeve@student.codam.nl>              +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/10/10 19:15:59 by joppe         #+#    #+#                 */
-/*   Updated: 2022/10/12 09:40:36 by joppe         ########   odam.nl         */
+/*   Created: 2022/10/12 09:41:09 by joppe         #+#    #+#                 */
+/*   Updated: 2022/10/12 10:03:09 by joppe         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
-{
-	size_t buf_size;
-	void *buffer;
 
-	buf_size = nmemb * size;
-	if (!buf_size)
-		return NULL;
-	buffer = malloc(buf_size);
-	if (buffer)
-		bzero(buffer, buf_size);
-	else 
-		return NULL;
-	return buffer;
+int ft_atoi(const char *nptr)
+{
+	int num = 0;
+	
+	printf("input %s\n", nptr);
+
+	for (int i = 0; nptr[i] != '\0'; ++i)
+	{
+		num = num * 10 + nptr[i] - '0';
+	}
+
+	return num;
 }

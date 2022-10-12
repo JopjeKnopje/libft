@@ -6,7 +6,7 @@
 /*   By: jboeve <jboeve@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/05 09:00:19 by jboeve        #+#    #+#                 */
-/*   Updated: 2022/10/12 09:38:44 by joppe         ########   odam.nl         */
+/*   Updated: 2022/10/12 09:52:39 by joppe         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -311,6 +311,12 @@ void test_ft_strdup()
 	printf("og %p | new %p\n", text, ret);
 }
 
+void test_ft_atoi()
+{
+	const char *str1 = "12345";
+	printf("ft_atoi \t %d | atoi \t\t %d\n", ft_atoi(str1), atoi(str1));
+}
+
 int	main()
 {
 	// test_ft_isalpha();
@@ -335,7 +341,8 @@ int	main()
 	// test_ft_memcmp();
 	// test_ft_strnstr();
 	// test_ft_calloc();	
-	test_ft_strdup();
+	// test_ft_strdup();
+	test_ft_atoi();
 	return 0;
 }
 
