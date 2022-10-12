@@ -20,11 +20,11 @@ x strncmp
 • strnstr
 • atoi
 -- malloc for these
-O calloc
+x calloc
 • strdup
 -- additional functions (see pdf for specs)
-substr
-strjoin
+• substr
+• strjoin
 strtrim
 split
 itoa

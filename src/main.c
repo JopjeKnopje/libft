@@ -6,7 +6,7 @@
 /*   By: jboeve <jboeve@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/05 09:00:19 by jboeve        #+#    #+#                 */
-/*   Updated: 2022/10/12 11:38:07 by jboeve        ########   odam.nl         */
+/*   Updated: 2022/10/12 20:13:26 by joppe         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -334,6 +334,31 @@ void test_ft_atoi()
 	test_ft_atoi_assert("123a45");
 }
 
+
+void test_ft_substr()
+{
+	const char* main = "test123";
+	// int delim = ft_strchr(main, 'e') - main;
+	// int len = ft_strlen(main) - delim;
+	// printf("len %d\n", len);
+	char *sub = ft_substr(main, 0, 1);
+	printf("main %s | sub %s\n", main, sub);
+}
+
+void test_ft_strjoin()
+{
+	const char* s1 = "test";
+	const char* s2 = "123";
+
+	char *out = ft_strjoin(s1, s2);
+	printf("s1 %s | s2 %s | join %s\n", s1, s2, out);
+}
+
+void test_ft_strtrim()
+{
+
+}
+
 int	main()
 {
 	// test_ft_isalpha();
@@ -360,7 +385,9 @@ int	main()
 	// test_ft_calloc();	
 	// test_ft_strdup();
 	// test_ft_atoi();
-	
+	// test_ft_substr();
+	// test_ft_strjoin();
+	test_ft_strtrim();
 	return 0;
 }
 
