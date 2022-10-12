@@ -6,7 +6,7 @@
 /*   By: jboeve <jboeve@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/05 09:00:19 by jboeve        #+#    #+#                 */
-/*   Updated: 2022/10/10 15:39:44 by jboeve        ########   odam.nl         */
+/*   Updated: 2022/10/12 09:38:44 by joppe         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -280,13 +280,35 @@ void test_ft_memcmp()
 void test_ft_strnstr()
 {
 	const char *s1 = "test123";
-	const char *s2 = "53";
-	size_t len = 5;
+	const char *s2 = "est123";
+	size_t len = 7;
 	char *diff = ft_strnstr(s1, s2, len);
 	printf("s1 %s | s2 %s | diff %s\n", s1, s2, diff);
 	diff = strnstr(s1, s2, len);
 	printf("s1 %s | s2 %s | diff %s\n", s1, s2, diff);
-		
+}
+
+void test_ft_calloc()
+{
+	// const size_t size = 16 * sizeof(char);
+	const size_t size = 0;
+	char *arr = ft_calloc(sizeof(char), size);
+	if (!arr)
+		return;
+	printf("%s\n", arr);
+	ft_memset(arr, 'a', size);
+	printf("%s\n", arr);
+	printf("%d\n", ft_strlen(arr));
+	free(arr);
+}
+
+void test_ft_strdup()
+{
+	const char* text = "";
+	char *ret = ft_strdup(text);
+	printf("strlen %d\n", ft_strlen(ret));
+	printf("%s\n", ret);
+	printf("og %p | new %p\n", text, ret);
 }
 
 int	main()
@@ -311,7 +333,9 @@ int	main()
 	// test_ft_strncmp();
 	// test_ft_memchr();
 	// test_ft_memcmp();
-	test_ft_strnstr();
+	// test_ft_strnstr();
+	// test_ft_calloc();	
+	test_ft_strdup();
 	return 0;
 }
 

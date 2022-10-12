@@ -18,8 +18,24 @@ x strncmp
 • memchr
 • memcmp
 • strnstr
------- malloc for these
-calloc
-strduptoi
+atoi
+-- malloc for these
+O calloc
+• strdup
+-- additional functions (see pdf for specs)
+substr
+strjoin
+strtrim
+split
+itoa
+strmapi
+striteri
+putchar_fd
+putstr_fd
+putendl_fd
+putnbr_fd
+
+
+
 
 BONUS: see pdf.
