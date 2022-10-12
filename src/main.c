@@ -6,7 +6,7 @@
 /*   By: jboeve <jboeve@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/05 09:00:19 by jboeve        #+#    #+#                 */
-/*   Updated: 2022/10/12 11:30:08 by jboeve        ########   odam.nl         */
+/*   Updated: 2022/10/12 11:31:04 by jboeve        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -311,7 +311,6 @@ void test_ft_strdup()
 	printf("og %p | new %p\n", text, ret);
 }
 
-#define assert__(x) for ( ; !(x) ; assert(x) )
 
 void test_ft_atoi_assert(const char *s)
 {
