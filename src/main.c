@@ -6,7 +6,7 @@
 /*   By: jboeve <jboeve@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/05 09:00:19 by jboeve        #+#    #+#                 */
-/*   Updated: 2022/10/12 11:31:04 by jboeve        ########   odam.nl         */
+/*   Updated: 2022/10/12 11:38:07 by jboeve        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -324,14 +324,14 @@ void test_ft_atoi_assert(const char *s)
 
 void test_ft_atoi()
 {
-	test_stuff("12345");
-	test_stuff("-12345");
-	test_stuff("123 45");
-	test_stuff("      --+-123 45");
-	test_stuff("+12345");
-	test_stuff("+ 123 45");
-	test_stuff(" +123 45");
-	test_stuff("123a45");
+	test_ft_atoi_assert("12345");
+	test_ft_atoi_assert("-12345");
+	test_ft_atoi_assert("123 45");
+	test_ft_atoi_assert("      --+-123 45");
+	test_ft_atoi_assert("+12345");
+	test_ft_atoi_assert("+ 123 45");
+	test_ft_atoi_assert(" +123 45");
+	test_ft_atoi_assert("123a45");
 }
 
 int	main()
@@ -359,7 +359,8 @@ int	main()
 	// test_ft_strnstr();
 	// test_ft_calloc();	
 	// test_ft_strdup();
-	test_ft_atoi();
+	// test_ft_atoi();
+	
 	return 0;
 }
 
