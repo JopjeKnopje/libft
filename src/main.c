@@ -6,7 +6,7 @@
 /*   By: jboeve <jboeve@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/05 09:00:19 by jboeve        #+#    #+#                 */
-/*   Updated: 2022/10/13 14:11:33 by jboeve        ########   odam.nl         */
+/*   Updated: 2022/10/13 17:05:53 by joppe         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -363,10 +363,10 @@ void test_ft_strtrim()
 
 void test_ft_split()
 {
-	const char* s = "test123";
-	const char delim = 'e';
+	const char* s = "hello world";
+	const char delim = ' ';
 	char **res = ft_split(s, delim);
-	printf("string %s | delim %c | res1 %s res2 %s\n", s, delim, res[0], res[1]);
+	// printf("string %s | delim %c | res1 %s res2 %s\n", s, delim, res[0], res[1]);
 }
 
 int	main()
@@ -397,8 +397,8 @@ int	main()
 	// test_ft_atoi();
 	// test_ft_substr();
 	// test_ft_strjoin();
-	test_ft_strtrim();
-	// test_ft_split();
+	// test_ft_strtrim();
+	test_ft_split();
 	return 0;
 }
 
