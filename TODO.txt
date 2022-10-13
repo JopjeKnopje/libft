@@ -23,9 +23,10 @@ x strncmp
 x calloc
 • strdup
 -- additional functions (see pdf for specs)
-• substr
+// Return empty string when len = 0
+x substr
 • strjoin
-strtrim
+x strtrim
 split
 itoa
 strmapi

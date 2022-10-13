@@ -6,7 +6,7 @@
 /*   By: jboeve <jboeve@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/05 09:00:19 by jboeve        #+#    #+#                 */
-/*   Updated: 2022/10/12 20:13:26 by joppe         ########   odam.nl         */
+/*   Updated: 2022/10/13 11:40:54 by jboeve        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -341,7 +341,7 @@ void test_ft_substr()
 	// int delim = ft_strchr(main, 'e') - main;
 	// int len = ft_strlen(main) - delim;
 	// printf("len %d\n", len);
-	char *sub = ft_substr(main, 0, 1);
+	char *sub = ft_substr(main, 1, 0);
 	printf("main %s | sub %s\n", main, sub);
 }
 
@@ -356,7 +356,9 @@ void test_ft_strjoin()
 
 void test_ft_strtrim()
 {
-
+	const char* s = "test123";
+	const char* map = "es";
+	printf("string %s | map %s | res %s\n", s, map, ft_strtrim(s, map));
 }
 
 int	main()
