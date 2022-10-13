@@ -6,7 +6,7 @@
 /*   By: jboeve <jboeve@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/12 10:41:54 by jboeve        #+#    #+#                 */
-/*   Updated: 2022/10/13 16:59:02 by joppe         ########   odam.nl         */
+/*   Updated: 2022/10/13 20:43:00 by joppe         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,5 +56,5 @@ char	*ft_strjoin(char const *s1, char const *s2);
 // TODO Maybe reverse the string instead of find_end
 char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
-
+void 	ft_putstr_fd(char *s, int fd);
 #endif

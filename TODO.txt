@@ -27,7 +27,7 @@ x calloc
 x substr
 • strjoin
 • strtrim
-split
+x split
 itoa
 strmapi
 striteri

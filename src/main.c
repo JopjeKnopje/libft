@@ -6,7 +6,7 @@
 /*   By: jboeve <jboeve@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/05 09:00:19 by jboeve        #+#    #+#                 */
-/*   Updated: 2022/10/13 17:05:53 by joppe         ########   odam.nl         */
+/*   Updated: 2022/10/13 20:44:26 by joppe         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -332,6 +332,8 @@ void test_ft_atoi()
 	test_ft_atoi_assert("+ 123 45");
 	test_ft_atoi_assert(" +123 45");
 	test_ft_atoi_assert("123a45");
+	test_ft_atoi_assert("2147483647");
+	test_ft_atoi_assert("-2147483648");
 }
 
 
@@ -366,9 +368,14 @@ void test_ft_split()
 	const char* s = "hello world";
 	const char delim = ' ';
 	char **res = ft_split(s, delim);
-	// printf("string %s | delim %c | res1 %s res2 %s\n", s, delim, res[0], res[1]);
+	printf("string %s | delim %c | res1 %s res2 %s\n", s, delim, res[0], res[1]);
 }
 
+void test_ft_putstr_fd()
+{
+	const char* s = "hello world";
+	ft_putstr_fd(s, 0);
+}
 int	main()
 {
 	// test_ft_isalpha();
@@ -398,7 +405,8 @@ int	main()
 	// test_ft_substr();
 	// test_ft_strjoin();
 	// test_ft_strtrim();
-	test_ft_split();
+	// test_ft_split();
+	test_ft_putstr_fd();
 	return 0;
 }
 
