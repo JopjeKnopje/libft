@@ -6,7 +6,7 @@
 /*   By: jboeve <jboeve@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/05 09:00:19 by jboeve        #+#    #+#                 */
-/*   Updated: 2022/10/13 11:40:54 by jboeve        ########   odam.nl         */
+/*   Updated: 2022/10/13 14:11:33 by jboeve        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -338,10 +338,10 @@ void test_ft_atoi()
 void test_ft_substr()
 {
 	const char* main = "test123";
-	// int delim = ft_strchr(main, 'e') - main;
-	// int len = ft_strlen(main) - delim;
+	int delim = ft_strchr(main, '1') - main;
+	int len = ft_strlen(main) - delim;
 	// printf("len %d\n", len);
-	char *sub = ft_substr(main, 1, 0);
+	char *sub = ft_substr(main, delim, len);
 	printf("main %s | sub %s\n", main, sub);
 }
 
@@ -356,9 +356,17 @@ void test_ft_strjoin()
 
 void test_ft_strtrim()
 {
-	const char* s = "test123";
-	const char* map = "es";
+	const char* s = "atest123a";
+	const char* map = "a";
 	printf("string %s | map %s | res %s\n", s, map, ft_strtrim(s, map));
+}
+
+void test_ft_split()
+{
+	const char* s = "test123";
+	const char delim = 'e';
+	char **res = ft_split(s, delim);
+	printf("string %s | delim %c | res1 %s res2 %s\n", s, delim, res[0], res[1]);
 }
 
 int	main()
@@ -390,6 +398,7 @@ int	main()
 	// test_ft_substr();
 	// test_ft_strjoin();
 	test_ft_strtrim();
+	// test_ft_split();
 	return 0;
 }
 

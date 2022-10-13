@@ -6,55 +6,47 @@
 /*   By: joppe <jboeve@student.codam.nl>              +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/12 20:12:33 by joppe         #+#    #+#                 */
-/*   Updated: 2022/10/13 11:46:06 by jboeve        ########   odam.nl         */
+/*   Updated: 2022/10/13 14:15:18 by jboeve        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-
-int	find_start(char const *s1, char const *set)
+int find_start(char const *s, char const *set)
 {
-	return 0;
+	int i;
+
+	i = 0;
+	while (s[i]) 
+	{
+		if (!ft_strchr(set, s[i]))
+			break;
+		i++;
+	}
+	return (i);
+}
+
+int find_end(char const *s, char const *set)
+{
+	int i;
+
+	i = ft_strlen(s) - 1;
+	while (i) 
+	{
+		if (!ft_strchr(set, s[i]))
+			break;
+		i--;
+	}
+	return (i);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	// loop through s1 and compare to each chr in set
-	// if one of the s1 chars matches move on to the next char in s1
-	// when ever the current char in s1 doens't match any char in set. 
-	// we've found the end of the beginning.
-	
-	int	i;
-	int j;
-	int matches;
-	size_t set_len = ft_strlen(set);
-	int start_index;
-	start_index = 0;
-	i = 0;
-	while  (s1[i])
-	{
-		j = 0;
-		matches = 0;
-		printf("index %d\n", i);
-		while (set[j])
-		{
-			if (s1[i] == set[j])
-			{
-				printf("%c == %c\n", s1[i], set[j]);
-				matches++;
-			}
-			j++;
+	int		start; 
+	int 	end;  
 
-			if (matches && (j >= set_len))
-			{
-				printf("jup \n");
-				start_index++;
-			}
-		}
-		i++;
-	}
-	printf("start_index %d\n", start_index);
-
-	return NULL;
+	start = find_start(s1, set);
+	end = find_end(s1, set);
+	return (ft_substr(s1, start, end - start + 1));
 }
+
