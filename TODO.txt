@@ -34,7 +34,7 @@ striteri
 • putchar_fd
 • putstr_fd
 • putendl_fd
-putnbr_fd
+currently working on putnbr_fd
 
 
 
