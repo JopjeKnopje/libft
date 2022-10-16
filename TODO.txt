@@ -28,7 +28,7 @@ x substr
 • strjoin
 • strtrim
 x split
-itoa
+• itoa
 strmapi
 striteri
 • putchar_fd
