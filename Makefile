@@ -34,6 +34,12 @@ $(NAME): $(OBJ_FILES)
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	$(CC) $(CFLAGS) -c -o $@ $<
 
+$(OBJ_DIR):
+	echo "did object dir"
+	mkdir $(OBJ_DIR)
+
+
+
 clean:
 	rm -f $(OBJ_FILES)
 

@@ -6,7 +6,7 @@
 /*   By: jboeve <jboeve@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/12 10:41:54 by jboeve        #+#    #+#                 */
-/*   Updated: 2022/10/13 20:43:00 by joppe         ########   odam.nl         */
+/*   Updated: 2022/10/17 00:23:31 by joppe         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #ifndef LIBFT_H
 #define LIBFT_H
 
+#include <unistd.h>
 #include <stddef.h>
 #include <stdlib.h>
 // For testing
@@ -57,4 +58,8 @@ char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
 void 	ft_putstr_fd(char *s, int fd);
+void 	ft_putchar_fd(char c, int fd);
+void	ft_putendl_fd(char *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
+char	*ft_itoa(int n);
 #endif

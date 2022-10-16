@@ -6,7 +6,7 @@
 /*   By: jboeve <jboeve@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/05 09:00:19 by jboeve        #+#    #+#                 */
-/*   Updated: 2022/10/13 20:44:26 by joppe         ########   odam.nl         */
+/*   Updated: 2022/10/17 00:04:25 by joppe         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -373,9 +373,30 @@ void test_ft_split()
 
 void test_ft_putstr_fd()
 {
-	const char* s = "hello world";
-	ft_putstr_fd(s, 0);
+	char* s = "hello world";
+	ft_putstr_fd(s, 1);
 }
+
+void test_ft_putchar_fd()
+{
+	char c = 'c';
+	ft_putchar_fd(c, 1);
+}
+
+void test_ft_putendl_fd()
+{
+	char *s = "test 123";
+	ft_putendl_fd(s, 1);
+}
+
+void test_ft_putnbr_fd()
+{
+	int x = 2147483647;
+	ft_putnbr_fd(x, 1);
+	x = 2147483648;
+	ft_putnbr_fd(x, 1);
+}
+
 int	main()
 {
 	// test_ft_isalpha();
@@ -406,7 +427,10 @@ int	main()
 	// test_ft_strjoin();
 	// test_ft_strtrim();
 	// test_ft_split();
-	test_ft_putstr_fd();
+	// test_ft_putstr_fd();
+	// test_ft_putchar_fd();
+	// test_ft_putendl_fd();
+	test_ft_putnbr_fd();
 	return 0;
 }
 
