@@ -6,7 +6,7 @@
 /*   By: jboeve <jboeve@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/05 09:00:19 by jboeve        #+#    #+#                 */
-/*   Updated: 2022/10/17 00:04:25 by joppe         ########   odam.nl         */
+/*   Updated: 2022/10/17 00:32:28 by joppe         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -393,7 +393,7 @@ void test_ft_putnbr_fd()
 {
 	int x = 2147483647;
 	ft_putnbr_fd(x, 1);
-	x = 2147483648;
+	x = -2147483648;
 	ft_putnbr_fd(x, 1);
 }
 
