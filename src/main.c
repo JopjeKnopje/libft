@@ -6,7 +6,7 @@
 /*   By: jboeve <jboeve@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/05 09:00:19 by jboeve        #+#    #+#                 */
-/*   Updated: 2022/10/17 00:32:28 by joppe         ########   odam.nl         */
+/*   Updated: 2022/10/17 10:14:18 by joppe         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -397,6 +397,19 @@ void test_ft_putnbr_fd()
 	ft_putnbr_fd(x, 1);
 }
 
+char func(unsigned int x, char c)
+{
+	char ret = c + x;
+	return ret;
+}
+
+void test_ft_strmapi()
+{
+	const char *s = "test123";
+	char *ret = ft_strmapi(s, func);
+	printf("%s\n", ret);
+}
+
 int	main()
 {
 	// test_ft_isalpha();
@@ -430,7 +443,8 @@ int	main()
 	// test_ft_putstr_fd();
 	// test_ft_putchar_fd();
 	// test_ft_putendl_fd();
-	test_ft_putnbr_fd();
+	// test_ft_putnbr_fd();
+	test_ft_strmapi();
 	return 0;
 }
 

@@ -6,7 +6,7 @@
 /*   By: jboeve <jboeve@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/13 11:47:26 by jboeve        #+#    #+#                 */
-/*   Updated: 2022/10/13 20:37:52 by joppe         ########   odam.nl         */
+/*   Updated: 2022/10/17 10:04:12 by joppe         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,11 @@ char	**ft_split(char const *s, char c)
 
 	ft_strlcpy(pre, s, pre_len + 1);
 
-	// printf("pre %s | pre_len %ld\n", pre, pre_len);
-	// printf("post %s | post_len %ld\n", post, post_len);
+	// TODO Should be sizeof(char)
 	char **arr = malloc(sizeof (char*) * 2);
+	arr[0]  = malloc(sizeof (char*) * pre_len + 1);
+	arr[0] = pre;
+	arr[1] = (post + 1);
 
 	return arr;
 

@@ -6,7 +6,7 @@
 /*   By: joppe <jboeve@student.codam.nl>              +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/10 19:15:59 by joppe         #+#    #+#                 */
-/*   Updated: 2022/10/12 09:40:36 by joppe         ########   odam.nl         */
+/*   Updated: 2022/10/17 09:46:20 by joppe         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	size_t buf_size;
-	void *buffer;
+	size_t 	buf_size;
+	void 	*buffer;
 
 	buf_size = nmemb * size;
 	if (!buf_size)
-		return NULL;
+		return (NULL);
 	buffer = malloc(buf_size);
 	if (buffer)
 		bzero(buffer, buf_size);
 	else 
-		return NULL;
-	return buffer;
+		return (NULL);
+	return (buffer);
 }

@@ -13,8 +13,8 @@ OBJ_FILES = $(patsubst $(SRC_DIR)%, $(OBJ_DIR)%, $(TMP))
 CC = gcc
 # CFLAGS = -Wall -Werror -Wextra -g -I${INCLUDE_DIR} 
 # When compiling on linux
-# CFLAGS = -Wall -Werror -Wextra -g -I${INCLUDE_DIR} -DLIBBSD_OVERLAY -I/usr/include/bsd
-CFLAGS = -g -I${INCLUDE_DIR} -DLIBBSD_OVERLAY -I/usr/include/bsd
+CFLAGS = -Wall -Werror -Wextra -g -I${INCLUDE_DIR} -DLIBBSD_OVERLAY -I/usr/include/bsd
+# CFLAGS = -g -I${INCLUDE_DIR} -DLIBBSD_OVERLAY -I/usr/include/bsd
 
 all: $(NAME)
 	@echo
