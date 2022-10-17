@@ -29,7 +29,7 @@ x substr
 • strtrim
 x split
 • itoa
-strmapi
+• strmapi
 striteri
 • putchar_fd
 • putstr_fd
