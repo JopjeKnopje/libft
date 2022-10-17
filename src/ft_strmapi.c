@@ -6,7 +6,7 @@
 /*   By: joppe <jboeve@student.codam.nl>              +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/17 09:46:55 by joppe         #+#    #+#                 */
-/*   Updated: 2022/10/17 10:13:47 by joppe         ########   odam.nl         */
+/*   Updated: 2022/10/17 10:24:40 by joppe         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,7 @@ char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char 	*s_mapi;
 
 	if (!s || !f)
-	{
-		printf("nope\n");
 		return NULL;
-	}
 	s_mapi = (char *) malloc(sizeof(char) * (ft_strlen(s) + 1));
 	if (!s_mapi)
 		return (NULL);
@@ -32,5 +29,6 @@ char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		s_mapi[i] = f((unsigned int) i, s[i]);
 		i++;
 	}
+	s[i] = 0;
 	return (s_mapi);
 }
