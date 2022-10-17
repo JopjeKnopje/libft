@@ -6,7 +6,7 @@
 /*   By: jboeve <jboeve@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/12 10:41:54 by jboeve        #+#    #+#                 */
-/*   Updated: 2022/10/17 09:47:27 by joppe         ########   odam.nl         */
+/*   Updated: 2022/10/17 11:21:12 by jboeve        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,4 +63,5 @@ void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 char	*ft_itoa(int n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void 	ft_striteri(char *s, void (*f)(unsigned int, char*));
 #endif

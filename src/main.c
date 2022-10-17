@@ -5,10 +5,11 @@
 /*                                                     +:+                    */
 /*   By: jboeve <jboeve@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/10/05 09:00:19 by jboeve        #+#    #+#                 */
-/*   Updated: 2022/10/17 10:14:18 by joppe         ########   odam.nl         */
+/*   Created: 2022/10/17 11:07:07 by jboeve        #+#    #+#                 */
+/*   Updated: 2022/10/17 11:27:42 by jboeve        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "libft.h"
 
@@ -410,6 +411,21 @@ void test_ft_strmapi()
 	printf("%s\n", ret);
 }
 
+void func1(unsigned int i, char* c)
+{
+	i = 0;
+	printf("%c\n", *c);
+	// c = '1';
+}
+
+void 	test_ft_striteri()
+{
+	char *s = "test123";
+	printf("%s\n", s);
+	ft_striteri(s, func1);
+	printf("%s\n", s);
+}
+
 int	main()
 {
 	// test_ft_isalpha();
@@ -444,7 +460,8 @@ int	main()
 	// test_ft_putchar_fd();
 	// test_ft_putendl_fd();
 	// test_ft_putnbr_fd();
-	test_ft_strmapi();
+	// test_ft_strmapi();
+	test_ft_striteri();
 	return 0;
 }
 
