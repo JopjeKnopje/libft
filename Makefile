@@ -1,49 +1,42 @@
-# https://dev.to/iamkhalil42/all-you-need-to-know-about-c-static-libraries-1o0b
-NAME = app
+# **************************************************************************** #
+#                                                                              #
+#                                                         ::::::::             #
+#    Makefile                                           :+:    :+:             #
+#                                                      +:+                     #
+#    By: jboeve <jboeve@student.codam.nl>             +#+                      #
+#                                                    +#+                       #
+#    Created: 2022/10/17 12:05:02 by jboeve        #+#    #+#                  #
+#    Updated: 2022/10/17 14:06:45 by jboeve        ########   odam.nl          #
+#                                                                              #
+# **************************************************************************** #
+
+NAME = libft.a
+
+
+CFLAGS = -Wall -Wextra -Werror -Iinclude 
 
 SRC_DIR = src
-INCLUDE_DIR = include
-BUILD_DIR = build
+SRCS = $(wildcard $(SRC_DIR)/*.c)
+
 OBJ_DIR = obj
+OBJS = $(patsubst $(SRC_DIR)%.c, $(OBJ_DIR)%.o, $(SRCS))
 
-SRC_FILES = $(wildcard $(SRC_DIR)/*.c)
-TMP = $(patsubst %.c, %.o, $(SRC_FILES))
-OBJ_FILES = $(patsubst $(SRC_DIR)%, $(OBJ_DIR)%, $(TMP))
-
-CC = gcc
-CFLAGS = -Wall -Werror -Wextra -g -I${INCLUDE_DIR} 
-# When compiling on linux
-# CFLAGS = -Wall -Werror -Wextra -g -I${INCLUDE_DIR} -DLIBBSD_OVERLAY -I/usr/include/bsd
-# CFLAGS = -g -I${INCLUDE_DIR} -DLIBBSD_OVERLAY -I/usr/include/bsd
 
 all: $(NAME)
-	@echo
-	@echo
-	@echo
-	@./$(BUILD_DIR)/$(NAME)
+	
 
+$(NAME): $(OBJS)
+	ar rcs $(NAME) $(OBJS)
 
-$(NAME): $(OBJ_FILES)
-	$(CC) $(OBJ_FILES) -o $(BUILD_DIR)/$(NAME)
-	# When compiling on linux
-	# ar -rc $(NAME) $(OBJ_FILES)
-	# $(CC) $(OBJ_FILES) -lbsd -o $(BUILD_DIR)/$(NAME)
-
-# Because every single object file depends on its corresponding c file
-# It will rebuild only the one object file instead of all object files
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
+	@mkdir -p $(OBJ_DIR)
 	$(CC) $(CFLAGS) -c -o $@ $<
 
-$(OBJ_DIR):
-	echo "did object dir"
-	mkdir $(OBJ_DIR)
-
-
-
 clean:
-	rm -f $(OBJ_FILES)
+	rm -r $(OBJ_DIR)
 
 fclean: clean
-	rm  -f $(BUILD_DIR)/$(NAME)
+	rm -f $(NAME)
 
 re: fclean all
+

@@ -6,7 +6,7 @@
 /*   By: jboeve <jboeve@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/17 11:07:07 by jboeve        #+#    #+#                 */
-/*   Updated: 2022/10/17 11:27:42 by jboeve        ########   odam.nl         */
+/*   Updated: 2022/10/17 11:58:18 by jboeve        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -413,14 +413,14 @@ void test_ft_strmapi()
 
 void func1(unsigned int i, char* c)
 {
-	i = 0;
+	*c = (char) i + '0';
 	printf("%c\n", *c);
-	// c = '1';
 }
 
 void 	test_ft_striteri()
 {
-	char *s = "test123";
+	char s[] = "test123";
+
 	printf("%s\n", s);
 	ft_striteri(s, func1);
 	printf("%s\n", s);

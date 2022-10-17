@@ -6,7 +6,7 @@
 /*   By: jboeve <jboeve@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/17 11:09:03 by jboeve        #+#    #+#                 */
-/*   Updated: 2022/10/17 11:27:17 by jboeve        ########   odam.nl         */
+/*   Updated: 2022/10/17 11:59:05 by jboeve        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void 	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	int i;	
+	int i;
 
 	i = 0;
 	while (s[i])

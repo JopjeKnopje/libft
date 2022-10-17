@@ -30,7 +30,7 @@ x substr
 x split
 • itoa
 • strmapi
-striteri
+• striteri
 • putchar_fd
 • putstr_fd
 • putendl_fd
