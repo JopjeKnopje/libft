@@ -6,7 +6,7 @@
 /*   By: joppe <jboeve@student.codam.nl>              +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/17 09:46:55 by joppe         #+#    #+#                 */
-/*   Updated: 2022/10/17 10:24:40 by joppe         ########   odam.nl         */
+/*   Updated: 2022/10/17 10:25:12 by joppe         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,6 @@ char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		s_mapi[i] = f((unsigned int) i, s[i]);
 		i++;
 	}
-	s[i] = 0;
+	s_mapi[i] = 0;
 	return (s_mapi);
 }
