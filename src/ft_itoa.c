@@ -6,7 +6,7 @@
 /*   By: joppe <jboeve@student.codam.nl>              +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/17 00:22:38 by joppe         #+#    #+#                 */
-/*   Updated: 2022/10/17 00:23:15 by joppe         ########   odam.nl         */
+/*   Updated: 2022/10/17 09:56:27 by joppe         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,8 @@
 
 int	int_len(int n)
 {
-	int	len;
 	int	i;
 
-	len = 0;
 	i = 0;
 	while (n)
 	{
