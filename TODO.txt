@@ -20,7 +20,7 @@
 • strnstr
 • atoi
 -- malloc for these
-x calloc
+• calloc
 • strdup
 -- additional functions (see pdf for specs)
 // Return empty string when len = 0
