@@ -37,6 +37,8 @@ x split
 • putnbr_fd
 
 
+TODO Check when dest is zero in str functions.
+
 
 
 BONUS: see pdf.
