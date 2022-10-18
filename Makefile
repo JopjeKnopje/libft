@@ -6,7 +6,7 @@
 #    By: jboeve <jboeve@student.codam.nl>             +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/10/17 12:05:02 by jboeve        #+#    #+#                  #
-#    Updated: 2022/10/17 14:06:45 by jboeve        ########   odam.nl          #
+#    Updated: 2022/10/18 15:27:36 by joppe         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,7 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	$(CC) $(CFLAGS) -c -o $@ $<
 
 clean:
-	rm -r $(OBJ_DIR)
+	rm -fr $(OBJ_DIR)
 
 fclean: clean
 	rm -f $(NAME)
