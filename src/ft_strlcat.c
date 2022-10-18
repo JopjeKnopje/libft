@@ -6,7 +6,7 @@
 /*   By: jboeve <jboeve@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/06 11:49:21 by jboeve        #+#    #+#                 */
-/*   Updated: 2022/10/18 11:58:38 by jboeve        ########   odam.nl         */
+/*   Updated: 2022/10/18 12:03:34 by jboeve        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int ft_strlcat(char *dest, const char *src, size_t size)
 	size_t offset;
 	size_t i;
 	
+	// comment
 	offset = ft_strlen(dest);
 	if (size <= offset)
 		return (size + ft_strlen(src));
