@@ -9,12 +9,12 @@
 • memcpy
 • memmove
 • strlcpy
-x strlcat
+• strlcat
 • toupper
 • tolower
 • strchr
 • strrchr
-x strncmp
+• strncmp
 • memchr
 • memcmp
 • strnstr
