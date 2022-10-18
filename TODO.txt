@@ -24,7 +24,7 @@
 • strdup
 -- additional functions (see pdf for specs)
 // Return empty string when len = 0
-x substr
+• substr
 • strjoin
 • strtrim
 x split
