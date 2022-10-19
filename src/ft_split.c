@@ -6,7 +6,7 @@
 /*   By: jboeve <jboeve@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/13 11:47:26 by jboeve        #+#    #+#                 */
-/*   Updated: 2022/10/19 15:48:08 by jboeve        ########   odam.nl         */
+/*   Updated: 2022/10/19 17:26:26 by joppe         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,24 @@
 // substr the words
 char	**ft_split(char const *s, char c)
 {
-
-	char *delim = s;
+	if (!s)
+		return (NULL);
+	char *delim = (char *) s;
+	int len = 0;
+	char *s_sub = 0;
 	int i = 0;
-	while (delim = ft_strchr(delim, c))
+
+	while (!i || (delim = ft_strchr(delim + 1, c)))
 	{
-		delim++;
-		if ((delim[0] != delim[-1]))
-		{
-			printf("%s\n", (delim));
-		}
+		if (!(len = ft_strchr(delim, c) - delim))
+			len = ft_strlen(delim);
+		s_sub = ft_substr(delim, 0, len);
+		printf("delim %s\n", delim);
+		printf("sub %s\n", s_sub);
 		i++;
 	}
+
+
 		
 	// char *delim = ft_strchr(s, c);
 	// int delim_index = (delim - s);
