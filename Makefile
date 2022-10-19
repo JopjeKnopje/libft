@@ -6,14 +6,15 @@
 #    By: jboeve <jboeve@student.codam.nl>             +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/10/17 12:05:02 by jboeve        #+#    #+#                  #
-#    Updated: 2022/10/19 13:16:13 by jboeve        ########   odam.nl          #
+#    Updated: 2022/10/19 15:02:54 by jboeve        ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
 
-CFLAGS = -Wall -Wextra -Werror -Iinclude
+# CFLAGS = -Wall -Wextra -Werror -Iinclude
+CFLAGS = -Iinclude
 
 SRC_DIR = src
 SRCS = $(wildcard $(SRC_DIR)/*.c)
