@@ -24,7 +24,7 @@
 • strdup
 -- additional functions (see pdf for specs)
 // Return empty string when len = 0
-x substr
+• substr
 • strjoin
 • strtrim
 x split
@@ -36,6 +36,8 @@ x split
 • putendl_fd
 • putnbr_fd
 
+
+TODO Check when dest is zero in str functions.
 
 
 

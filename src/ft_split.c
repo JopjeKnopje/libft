@@ -6,13 +6,14 @@
 /*   By: jboeve <jboeve@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/13 11:47:26 by jboeve        #+#    #+#                 */
-/*   Updated: 2022/10/19 13:14:42 by jboeve        ########   odam.nl         */
+/*   Updated: 2022/10/19 13:16:05 by jboeve        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-
+// when  splitting we should discard the delim
 char	**ft_split(char const *s, char c)
 {
 	// Todo make modular
