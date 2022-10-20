@@ -6,7 +6,7 @@
 /*   By: jboeve <jboeve@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/12 11:38:15 by jboeve        #+#    #+#                 */
-/*   Updated: 2022/10/18 16:16:55 by joppe         ########   odam.nl         */
+/*   Updated: 2022/10/20 10:31:48 by joppe         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*s_d;
 
 	if (!len)
-		return ft_strdup("");
-	s_d = malloc(len * sizeof(char) + 1);
+		return (ft_strdup(""));
+	s_d = malloc((len * sizeof(char)) + 1);
 	if (!s_d)
 		return (NULL);
 	i = 0;

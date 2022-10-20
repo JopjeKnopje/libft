@@ -6,35 +6,35 @@
 /*   By: joppe <jboeve@student.codam.nl>              +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/12 20:12:33 by joppe         #+#    #+#                 */
-/*   Updated: 2022/10/13 17:04:18 by joppe         ########   odam.nl         */
+/*   Updated: 2022/10/20 10:31:24 by joppe         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int find_start(char const *s, char const *set)
+int	find_start(char const *s, char const *set)
 {
-	int i;
+	int	i;
 
 	i = 0;
-	while (s[i]) 
+	while (s[i])
 	{
 		if (!ft_strchr(set, s[i]))
-			break;
+			break ;
 		i++;
 	}
 	return (i);
 }
 
-int find_end(char const *s, char const *set)
+int	find_end(char const *s, char const *set)
 {
-	int i;
+	int	i;
 
 	i = ft_strlen(s) - 1;
-	while (i) 
+	while (i)
 	{
 		if (!ft_strchr(set, s[i]))
-			break;
+			break ;
 		i--;
 	}
 	return (i);
@@ -42,11 +42,10 @@ int find_end(char const *s, char const *set)
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int		start; 
-	int 	end;  
+	int	start;
+	int	end;
 
 	start = find_start(s1, set);
 	end = find_end(s1, set);
 	return (ft_substr(s1, start, end - start + 1));
 }
-

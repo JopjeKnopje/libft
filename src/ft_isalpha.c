@@ -6,11 +6,11 @@
 /*   By: joppe <marvin@42.fr>                         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/05 08:41:03 by joppe         #+#    #+#                 */
-/*   Updated: 2022/10/05 08:50:16 by joppe         ########   odam.nl         */
+/*   Updated: 2022/10/20 10:10:25 by joppe         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isalpha(int c)
+int	ft_isalpha(int c)
 {
 	return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
 }

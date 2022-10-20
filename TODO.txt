@@ -7,10 +7,13 @@
 • memset
 • bzero
 • memcpy
+// TODO VLA Forbidden
 • memmove
 • strlcpy
 • strlcat
+// TODO This is weird
 • toupper
+// TODO Not static?
 • tolower
 • strchr
 • strrchr
@@ -18,6 +21,7 @@
 • memchr
 • memcmp
 • strnstr
+// TODO Less lines
 • atoi
 -- malloc for these
 • calloc

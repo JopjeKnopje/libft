@@ -6,26 +6,23 @@
 /*   By: joppe <jboeve@student.codam.nl>              +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/12 09:41:09 by joppe         #+#    #+#                 */
-/*   Updated: 2022/10/12 11:29:03 by jboeve        ########   odam.nl         */
+/*   Updated: 2022/10/20 10:09:00 by joppe         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-
-int ft_atoi(const char *s)
+int	ft_atoi(const char *s)
 {
-	int num;
+	int	num;
 	int	i;
-	int sign;
+	int	sign;
 
 	i = 0;
 	num = 0;
 	sign = 0;
 	while (s[i] == ' ')
-	{
 		i++;
-	}
 	if (s[i] == '-' && sign == 0)
 	{
 		sign = -1;
@@ -38,13 +35,12 @@ int ft_atoi(const char *s)
 	}
 	if (sign == 0)
 		sign = 1;
-
 	while (s[i])
 	{
 		if (!ft_isdigit(s[i]))
-			break;
+			break ;
 		num = num * 10 + s[i] - '0';
 		i++;
 	}
-	return num * sign;
+	return (num * sign);
 }

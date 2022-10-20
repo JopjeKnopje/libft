@@ -6,11 +6,11 @@
 /*   By: jboeve <jboeve@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/05 08:59:29 by jboeve        #+#    #+#                 */
-/*   Updated: 2022/10/05 09:00:12 by jboeve        ########   odam.nl         */
+/*   Updated: 2022/10/20 10:10:46 by joppe         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(int c) 
+int	ft_isascii(int c)
 {
 	return (c >= 0 && c <= 127);
 }
