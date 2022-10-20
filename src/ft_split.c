@@ -6,7 +6,7 @@
 /*   By: jboeve <jboeve@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/13 11:47:26 by jboeve        #+#    #+#                 */
-/*   Updated: 2022/10/20 12:59:02 by jboeve        ########   odam.nl         */
+/*   Updated: 2022/10/20 13:08:30 by jboeve        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,22 +38,13 @@ int	count_words(char const *s, char c)
 
 char	*get_next(char const *s, char c)
 {
-	int	i;
 	char *delim;
-
-	i = 0;
-	delim = (char *) s;
-	while (!i || (delim = ft_strchr(delim + 1, c)))
-	{
-		delim++;
-		if (!(ft_strchr(delim + 1, c)))
-			break ;
-		if (delim[0] == c)
-			continue ;
-		// return delim;
+	delim = s;
+	int i = 0;
+	delim = ft_strchr(s, c);
+	while (delim[i] == c)
 		i++;
-	}
-	return (NULL);
+	return (delim + i);
 }
 
 char	**ft_split(char const *s, char c)
@@ -71,11 +62,11 @@ char	**ft_split(char const *s, char c)
 	printf("start %s\n", start);
 	printf("end %s\n", end);
 
-	int len = (ft_strlen(start) - ft_strlen(end));
-	printf("len %d\n" , len);
-	char *sub = ft_substr(start, 0, len);
+	// int len = (ft_strlen(start) - ft_strlen(end));
+	// printf("len %d\n" , len);
+	// char *sub = ft_substr(start, 0, len);
 
-	printf("%s\n", sub);	
+	// printf("%s\n", sub);	
 
 
 	// loop through word count
