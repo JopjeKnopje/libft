@@ -6,7 +6,7 @@
 /*   By: jboeve <jboeve@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/13 11:47:26 by jboeve        #+#    #+#                 */
-/*   Updated: 2022/10/20 12:46:00 by jboeve        ########   odam.nl         */
+/*   Updated: 2022/10/20 12:59:02 by jboeve        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,18 +36,12 @@ int	count_words(char const *s, char c)
 	return word_count;
 }
 
-
-char	**ft_split(char const *s, char c)
+char	*get_next(char const *s, char c)
 {
-	int i;
+	int	i;
 	char *delim;
-	int word_count;
-	char **split;
 
 	i = 0;
-	word_count = count_words(s, c);
-	split = (char **) ft_calloc((word_count + 1), sizeof(char **));
-
 	delim = (char *) s;
 	while (!i || (delim = ft_strchr(delim + 1, c)))
 	{
@@ -56,10 +50,40 @@ char	**ft_split(char const *s, char c)
 			break ;
 		if (delim[0] == c)
 			continue ;
-		
-		printf("%s\n", delim);
+		// return delim;
 		i++;
 	}
+	return (NULL);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	int i;
+	char *delim;
+	int word_count;
+	char **split;
+
+	word_count = count_words(s, c);
+	split = (char **) ft_calloc((word_count + 1), sizeof(char **));
+
+	char *start = get_next(s, c);
+	char *end = get_next(start, c);
+	printf("start %s\n", start);
+	printf("end %s\n", end);
+
+	int len = (ft_strlen(start) - ft_strlen(end));
+	printf("len %d\n" , len);
+	char *sub = ft_substr(start, 0, len);
+
+	printf("%s\n", sub);	
+
+
+	// loop through word count
+	// get the next first occourance of the delimiter
+	// get length delim_end - delim_start
+	// put in array
+
+
 
 	
 	free(split);
