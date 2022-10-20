@@ -6,78 +6,40 @@
 /*   By: jboeve <jboeve@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/13 11:47:26 by jboeve        #+#    #+#                 */
-/*   Updated: 2022/10/20 13:08:30 by jboeve        ########   odam.nl         */
+/*   Updated: 2022/10/20 14:40:07 by jboeve        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-// count words
-// malloc string array
-// substr the words
-
-int	count_words(char const *s, char c)
+int count_words(char const *s, char c)
 {
-	char	*delim;
-	int		word_count;
+	int i;
+	int count;
 
-	delim = (char *) s;
-	word_count = 0;
-	while (!word_count || (delim = ft_strchr(delim + 1, c)))
+	i = 0;
+	count = 0;
+	while (s[i])
 	{
-		delim++;
-		if (!(ft_strchr(delim + 1, c)))
-			break ;
-		if (delim[0] == c)
-			continue ;
-		word_count++;
+		while (s[i] == c)
+			i++;
+		printf("%c\n", s[i]);
+		if (s[i] != c)
+			count++;
+		while (s[i] == c)
+			i++;
 	}
-	return word_count;
-}
-
-char	*get_next(char const *s, char c)
-{
-	char *delim;
-	delim = s;
-	int i = 0;
-	delim = ft_strchr(s, c);
-	while (delim[i] == c)
-		i++;
-	return (delim + i);
+	printf("count %d\n", count);
+	return (count);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	int i;
-	char *delim;
-	int word_count;
-	char **split;
+	if (!s)
+		return (NULL);
+	count_words(s, c);
 
-	word_count = count_words(s, c);
-	split = (char **) ft_calloc((word_count + 1), sizeof(char **));
-
-	char *start = get_next(s, c);
-	char *end = get_next(start, c);
-	printf("start %s\n", start);
-	printf("end %s\n", end);
-
-	// int len = (ft_strlen(start) - ft_strlen(end));
-	// printf("len %d\n" , len);
-	// char *sub = ft_substr(start, 0, len);
-
-	// printf("%s\n", sub);	
-
-
-	// loop through word count
-	// get the next first occourance of the delimiter
-	// get length delim_end - delim_start
-	// put in array
-
-
-
-	
-	free(split);
+		
 
 	return NULL;
 }
