@@ -6,22 +6,20 @@
 /*   By: jboeve <jboeve@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/13 11:47:26 by jboeve        #+#    #+#                 */
-/*   Updated: 2022/10/21 09:55:24 by joppe         ########   odam.nl         */
+/*   Updated: 2022/10/21 10:17:10 by joppe         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <stdlib.h>
 
-int	count_words(char const *s, char c)
+static	int	count_words(char const *s, char c)
 {
 	int i;
-	int at_word;
 	int count;
+	int at_word;
 
-	count = 0;
 	i = 0;
+	count = 0;
 	at_word = 0;
 	while (s[i])
 	{
@@ -34,29 +32,34 @@ int	count_words(char const *s, char c)
 			at_word = 0;
 		i++;
 	}
-	printf("%d\n", count);
-	return count;
-
+	return (count);
 }
-// count words
-// malloc string array
-// substr the words
+
 char	**ft_split(char const *s, char c)
 {
 	int word_count = count_words(s, c);
 	int i;
+	int j;
+	int start;
+	char **s_split;
 
-	char **split = (char **) malloc((word_count + 1) * sizeof(char **));
-	if (split)
+	s_split = (char **) malloc((word_count + 1) * sizeof(char **));
+	if (!s_split)
 		return (NULL);
-
 	i = 0;
-	while (i <= word_count)
+	j = 0;
+	start = 0;
+	while (word_count)
 	{
-		
-
+		while (s[i] == c)
+			i++;
+		start = i;
+		while (s[i] != c) 
+			i++;
+		s_split[j] = ft_substr(s, start, i - start);
+		j++;
+		word_count--;
 	}
-
-		
-	return NULL;
+	s_split[j] = 0;
+	return (s_split);
 }

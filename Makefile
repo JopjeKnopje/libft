@@ -6,15 +6,15 @@
 #    By: jboeve <jboeve@student.codam.nl>             +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/10/17 12:05:02 by jboeve        #+#    #+#                  #
-#    Updated: 2022/10/19 16:22:27 by joppe         ########   odam.nl          #
+#    Updated: 2022/10/20 17:18:14 by joppe         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
 
-CFLAGS = -Wall -Wextra -Werror -Iinclude
-# CFLAGS = -Iinclude
+# CFLAGS = -Wall -Wextra -Werror -Iinclude
+CFLAGS = -Iinclude
 
 SRC_DIR = src
 SRCS = $(wildcard $(SRC_DIR)/*.c)
@@ -25,7 +25,6 @@ OBJS = $(patsubst $(SRC_DIR)%.c, $(OBJ_DIR)%.o, $(SRCS))
 
 all: $(NAME)
 	
-
 $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 

@@ -7,8 +7,7 @@
 • memset
 • bzero
 • memcpy
-// TODO VLA Forbidden
-• memmove
+// TODO VLA Forbidden • memmove
 • strlcpy
 • strlcat
 // TODO This is weird
@@ -40,6 +39,7 @@ x split
 • putendl_fd
 • putnbr_fd
 
+TODO Put all obj file and headers in root of dir (see subject.pdf)
 
 TODO Check when dest is zero in str functions.
 
