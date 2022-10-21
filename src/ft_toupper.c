@@ -6,20 +6,15 @@
 /*   By: joppe <jboeve@student.codam.nl>              +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/10 10:04:22 by joppe         #+#    #+#                 */
-/*   Updated: 2022/10/20 10:33:23 by joppe         ########   odam.nl         */
+/*   Updated: 2022/10/21 10:25:26 by joppe         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	int	ft_islower(int c)
-{
-	return (c >= 'a' && c <= 'z');
-}
-
 int	ft_toupper(int c)
 {
-	if (ft_islower(c))
+	if (c >= 'a' && c <= 'z')
 		c -= 32;
 	return (c);
 }
