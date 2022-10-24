@@ -1,5 +1,6 @@
-obj/
 .cache/
+*.o
+
 libft.a
 compile_commands.json
 
