@@ -36,7 +36,6 @@
 • Nog te fixen
 strchr
 strrchr
-strncmp
 substr
 strtrim
 atoi
