@@ -6,7 +6,7 @@
 #    By: jboeve <jboeve@student.codam.nl>             +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/10/17 12:05:02 by jboeve        #+#    #+#                  #
-#    Updated: 2022/10/25 13:36:56 by jboeve        ########   odam.nl          #
+#    Updated: 2022/10/29 17:49:59 by joppe         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,7 +63,6 @@ SRCS = 	ft_atoi.c \
 
 # OBJ_DIR = obj
 OBJS = $(patsubst %.c, %.o, $(SRCS))
-
 
 all: $(NAME)
 	
