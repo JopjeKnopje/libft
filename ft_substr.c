@@ -6,19 +6,18 @@
 /*   By: jboeve <jboeve@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/12 11:38:15 by jboeve        #+#    #+#                 */
-/*   Updated: 2022/10/21 16:24:21 by joppe         ########   odam.nl         */
+/*   Updated: 2022/10/30 22:48:55 by joppe         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	i;		
+	size_t	i;
 	char	*s_sub;
 
-	if (!s)
-		return (NULL);
 	s_sub = malloc(sizeof(char) * (len + 1));
 	if (!s_sub)
 		return (NULL);
