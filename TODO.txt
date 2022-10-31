@@ -33,9 +33,6 @@
 • putendl_fd
 • putnbr_fd
 
-• Nog te fixen
-strchr
-strrchr
 substr
 strtrim
 atoi

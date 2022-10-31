@@ -6,7 +6,7 @@
 /*   By: joppe <marvin@42.fr>                         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/05 15:04:57 by joppe         #+#    #+#                 */
-/*   Updated: 2022/10/29 20:09:15 by joppe         ########   odam.nl         */
+/*   Updated: 2022/10/31 09:27:57 by jboeve        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,5 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 			i++;
 		}
 	}
-	return (d_ptr);
+	return (dest);
 }
