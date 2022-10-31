@@ -6,7 +6,7 @@
 /*   By: joppe <jboeve@student.codam.nl>              +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/17 00:22:38 by joppe         #+#    #+#                 */
-/*   Updated: 2022/10/17 09:56:27 by joppe         ########   odam.nl         */
+/*   Updated: 2022/10/31 13:32:15 by jboeve        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char	*ft_itoa(int n)
 
 	sign = (n < 0);
 	len = int_len(n) + sign;
-	s = (char *) malloc(sizeof(char) * (len));
+	s = (char *) malloc(sizeof(char) * (len + 1));
 	if (!s)
 		return (NULL);
 	if (sign)
@@ -50,6 +50,6 @@ char	*ft_itoa(int n)
 		n /= 10;
 		i--;
 	}
-	s[len] = 0;
+	s[len + 1] = 0;
 	return (s);
 }
