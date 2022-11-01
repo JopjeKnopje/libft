@@ -33,12 +33,10 @@
 • putendl_fd
 • putnbr_fd
 
-• Nog te fixen
-strchr
-strrchr
 substr
+trim will be fixed when substr is fixed, cuz it depends on substr
 strtrim
-atoi
+
 strjoin
 itoa
 putnbr_fd

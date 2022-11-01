@@ -6,14 +6,13 @@
 #    By: jboeve <jboeve@student.codam.nl>             +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/10/17 12:05:02 by jboeve        #+#    #+#                  #
-#    Updated: 2022/10/29 17:49:59 by joppe         ########   odam.nl          #
+#    Updated: 2022/10/31 11:29:50 by jboeve        ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
 CFLAGS = -Wall -Wextra -Werror
-
 
 SRCS = 	ft_atoi.c \
 		ft_bzero.c \
@@ -61,7 +60,6 @@ SRCS = 	ft_atoi.c \
 		ft_tolower.c \
 		ft_toupper.c
 
-# OBJ_DIR = obj
 OBJS = $(patsubst %.c, %.o, $(SRCS))
 
 all: $(NAME)
@@ -79,4 +77,3 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
-

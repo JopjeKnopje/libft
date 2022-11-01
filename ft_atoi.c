@@ -6,7 +6,7 @@
 /*   By: joppe <jboeve@student.codam.nl>              +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/12 09:41:09 by joppe         #+#    #+#                 */
-/*   Updated: 2022/10/30 23:02:32 by joppe         ########   odam.nl         */
+/*   Updated: 2022/11/01 17:56:01 by joppe         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +14,27 @@
 
 int	ft_atoi(const char *s)
 {
-	int	num;
 	int	i;
+	int	num;
 	int	sign;
 
-	i = 0;
 	num = 0;
 	sign = 0;
-	while (s[i] == ' ')
+	i = 0;
+	while (s[i] == ' ' || (s[i] >= 9 && s[i] <= 13))
 		i++;
-	if (s[i] == '-' && sign == 0)
+	while ((s[i] == '-' || s[i] == '+') && !sign)
 	{
-		sign = -1;
+		if (s[i] == '-')
+			sign = -1;
+		if (s[i] == '+')
+			sign = 1;
 		i++;
 	}
-	if (s[i] == '+' && sign == 0)
-	{
+	if (!sign)
 		sign = 1;
-		i++;
-	}
-	if (sign == 0)
-		sign = 1;
-	while (s[i])
+	while (s[i] && ft_isdigit(s[i]))
 	{
-		if (!ft_isdigit(s[i]))
-			break ;
 		num = num * 10 + s[i] - '0';
 		i++;
 	}
