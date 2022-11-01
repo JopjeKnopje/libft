@@ -6,7 +6,7 @@
 /*   By: joppe <jboeve@student.codam.nl>              +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/12 09:41:09 by joppe         #+#    #+#                 */
-/*   Updated: 2022/11/01 08:11:49 by joppe         ########   odam.nl         */
+/*   Updated: 2022/11/01 08:20:13 by joppe         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int	ft_atoi(const char *s)
 	sign = 0;
 	while (s[i])
 	{
+		// printf("%d @ %c | %d\n", i, s[i], s[i]);
 		if (s[i] == ' ')
 		{
 			i++;
@@ -31,6 +32,10 @@ int	ft_atoi(const char *s)
 		}
 		if (s[i] >= 7 && s[i] <= 13)
 		{
+			if (s[i + 1] == ' ' && ft_isdigit(s[i + 2])) 
+			{
+				return (0);
+			}
 			i++;
 			continue;
 		}
