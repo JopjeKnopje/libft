@@ -6,7 +6,7 @@
 /*   By: jboeve <jboeve@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/12 11:38:15 by jboeve        #+#    #+#                 */
-/*   Updated: 2022/11/01 19:05:51 by joppe         ########   odam.nl         */
+/*   Updated: 2022/11/01 19:15:33 by joppe         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	i;
 	size_t	s_len;
 	char	*s_sub;
-	
+
 	i = 0;
 	if (!s)
 		return (NULL);
