@@ -6,13 +6,15 @@
 /*   By: jboeve <jboeve@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/05 09:10:16 by jboeve        #+#    #+#                 */
-/*   Updated: 2022/10/20 10:26:28 by joppe         ########   odam.nl         */
+/*   Updated: 2022/11/01 18:48:51 by joppe         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(const char *s)
+#include "libft.h"
+
+size_t	ft_strlen(const char *s)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (s[i])
