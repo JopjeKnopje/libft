@@ -33,7 +33,6 @@
 • putendl_fd
 • putnbr_fd
 
-substr
 trim will be fixed when substr is fixed, cuz it depends on substr
 strtrim
 
@@ -41,6 +40,8 @@ strjoin
 itoa
 putnbr_fd
 
+
+TODO strlen return type
 
 
 
