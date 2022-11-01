@@ -37,8 +37,8 @@ substr
 trim will be fixed when substr is fixed, cuz it depends on substr
 strtrim
 
-atoi
 strjoin
+atoi
 itoa
 putnbr_fd
 
