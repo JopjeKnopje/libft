@@ -6,7 +6,7 @@
 #    By: jboeve <jboeve@student.codam.nl>             +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/10/17 12:05:02 by jboeve        #+#    #+#                  #
-#    Updated: 2022/11/03 16:57:07 by jboeve        ########   odam.nl          #
+#    Updated: 2022/11/03 17:29:41 by joppe         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,8 +49,8 @@ SRCS = 	ft_atoi.c \
 		ft_tolower.c \
 		ft_toupper.c
 
-BONUS_SRCS = ft_lstnew.c
-		# ft_lstadd_front.c \
+BONUS_SRCS = ft_lstnew.c \
+		ft_lstadd_front.c
 		# ft_lstsize.c \
 		# ft_lstlast.c \
 		# ft_lstadd_back.c \
