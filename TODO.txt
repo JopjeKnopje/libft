@@ -36,10 +36,11 @@
 
 BONUS
 
-x lstnew
-x lstadd_front
-x lstsize
-x lstlast
+• lstnew
+• lstadd_front
+• lstsize
+// test with paco
+o lstlast
 x lstadd_back
 x lstdelone
 x lstclear
