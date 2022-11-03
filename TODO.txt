@@ -34,7 +34,6 @@
 • putnbr_fd
 
 strjoin
-itoa
 putnbr_fd
 
 
