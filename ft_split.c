@@ -6,7 +6,7 @@
 /*   By: jboeve <jboeve@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/13 11:47:26 by jboeve        #+#    #+#                 */
-/*   Updated: 2022/10/29 22:23:08 by joppe         ########   odam.nl         */
+/*   Updated: 2022/11/03 11:15:18 by jboeve        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 static	int	count_words(char const *s, char c)
 {
-	int i;
-	int count;
-	int at_word;
+	int	i;
+	int	count;
+	int	at_word;
 
 	i = 0;
 	count = 0;
@@ -37,13 +37,14 @@ static	int	count_words(char const *s, char c)
 
 char	**ft_split(char const *s, char c)
 {
-	int word_count = count_words(s, c);
-	int i;
-	int j;
-	int start;
-	char **s_split;
+	int		word_count;
+	int		j;
+	size_t	i;
+	int		start;
+	char	**s_split;
 
-	s_split = (char **) malloc((word_count + 1) * sizeof(char **));
+	word_count = count_words(s, c);
+	s_split = (char **) ft_calloc(word_count + 1, sizeof(char **));
 	if (!s_split)
 		return (NULL);
 	i = 0;
@@ -54,12 +55,11 @@ char	**ft_split(char const *s, char c)
 		while (s[i] == c)
 			i++;
 		start = i;
-		while (s[i] != c) 
+		while (s[i] != c && i < ft_strlen(s))
 			i++;
 		s_split[j] = ft_substr(s, start, i - start);
 		j++;
 		word_count--;
 	}
-	s_split[j] = 0;
 	return (s_split);
 }

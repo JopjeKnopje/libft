@@ -24,7 +24,6 @@
 • substr
 • strjoin
 • strtrim
-• split
 • itoa
 • strmapi
 • striteri
@@ -32,12 +31,11 @@
 • putstr_fd
 • putendl_fd
 • putnbr_fd
+• strjoin
+• putnbr_fd
+• split
 
-strjoin
-putnbr_fd
 
-
-TODO strlen return type
 
 
 

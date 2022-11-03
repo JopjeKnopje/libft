@@ -6,29 +6,29 @@
 /*   By: joppe <jboeve@student.codam.nl>              +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/16 22:59:28 by joppe         #+#    #+#                 */
-/*   Updated: 2022/11/03 09:53:28 by joppe         ########   odam.nl         */
+/*   Updated: 2022/11/03 11:16:57 by jboeve        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	unsigned int num;
-
+	if (n == -2147483648)
+	{
+		ft_putstr_fd("-2147483648", fd);
+		return ;
+	}
 	if (n < 0)
 	{
 		ft_putchar_fd('-', fd);
-		num = -n;
+		n *= -1;
+	}
+	if (n > 9)
+	{
+		ft_putnbr_fd(n / 10, fd);
+		ft_putnbr_fd(n % 10, fd);
 	}
 	else
-		num = n;
-	if (num > 9)
-	{
-		ft_putnbr_fd(num, fd);
-		num %= 10;
-	}
-	ft_putchar_fd(num + '0', fd);
+		ft_putchar_fd((n + '0'), fd);
 }
