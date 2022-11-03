@@ -6,11 +6,12 @@
 /*   By: joppe <jboeve@student.codam.nl>              +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/17 00:22:38 by joppe         #+#    #+#                 */
-/*   Updated: 2022/11/03 14:14:40 by jboeve        ########   odam.nl         */
+/*   Updated: 2022/11/03 14:32:08 by jboeve        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 int	int_len(int n)
 {
@@ -36,12 +37,12 @@ char	*ft_itoa(int n)
 		return (ft_strdup("0"));
 	sign = (n < 0);
 	i = int_len(n) + sign;
-	s = (char *) malloc(sizeof(char) * (i + 2));
+	s = ft_calloc(sizeof(char), i + 1);
 	if (!s)
 		return (NULL);
 	if (sign)
 		s[0] = '-';
-	s[i-- + 1] = 0;
+	s[i--] = 0;
 	while (n)
 	{
 		value = (n % 10);
