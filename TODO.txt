@@ -33,7 +33,5 @@
 • putnbr_fd
 • split
 
-strtrim
-
 
 BONUS: see pdf.

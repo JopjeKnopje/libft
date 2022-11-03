@@ -6,14 +6,13 @@
 /*   By: joppe <jboeve@student.codam.nl>              +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/17 00:22:38 by joppe         #+#    #+#                 */
-/*   Updated: 2022/11/03 14:32:08 by jboeve        ########   odam.nl         */
+/*   Updated: 2022/11/03 15:53:44 by jboeve        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-int	int_len(int n)
+static	int	int_len(int n)
 {
 	int	i;
 

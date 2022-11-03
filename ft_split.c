@@ -6,7 +6,7 @@
 /*   By: jboeve <jboeve@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/13 11:47:26 by jboeve        #+#    #+#                 */
-/*   Updated: 2022/11/03 11:15:18 by jboeve        ########   odam.nl         */
+/*   Updated: 2022/11/03 16:16:17 by jboeve        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,21 @@ static	int	count_words(char const *s, char c)
 	return (count);
 }
 
+static	char	**free_all(char **s_split, int i)
+{
+	while (i--)
+		free(s_split[i]);
+	free(s_split);
+	return (NULL);
+}
+
+static	int	offset_delim(const char *s, int c, int i)
+{
+	while (s[i] == c)
+		i++;
+	return (i);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	int		word_count;
@@ -50,16 +65,16 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	j = 0;
 	start = 0;
-	while (word_count)
+	while (word_count--)
 	{
-		while (s[i] == c)
-			i++;
+		i = offset_delim(s, c, i);
 		start = i;
 		while (s[i] != c && i < ft_strlen(s))
 			i++;
 		s_split[j] = ft_substr(s, start, i - start);
+		if (!s_split[j])
+			return (free_all(s_split, j));
 		j++;
-		word_count--;
 	}
 	return (s_split);
 }

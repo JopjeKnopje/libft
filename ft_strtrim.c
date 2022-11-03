@@ -6,14 +6,13 @@
 /*   By: joppe <jboeve@student.codam.nl>              +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/12 20:12:33 by joppe         #+#    #+#                 */
-/*   Updated: 2022/11/03 14:47:54 by jboeve        ########   odam.nl         */
+/*   Updated: 2022/11/03 15:54:07 by jboeve        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-int	find_start(char const *s, char const *set)
+static	int	find_start(char const *s, char const *set)
 {
 	int	i;
 
@@ -27,7 +26,7 @@ int	find_start(char const *s, char const *set)
 	return (i);
 }
 
-int	find_end(char const *s, char const *set)
+static	int	find_end(char const *s, char const *set)
 {
 	int	i;
 
