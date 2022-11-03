@@ -33,11 +33,7 @@
 • putnbr_fd
 • split
 
-itoa
 strtrim
-
-
-
 
 
 BONUS: see pdf.

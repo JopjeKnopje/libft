@@ -6,7 +6,7 @@
 /*   By: joppe <jboeve@student.codam.nl>              +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/12 20:12:33 by joppe         #+#    #+#                 */
-/*   Updated: 2022/11/01 19:14:59 by joppe         ########   odam.nl         */
+/*   Updated: 2022/11/03 14:47:54 by jboeve        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	find_end(char const *s, char const *set)
 {
 	int	i;
 
-	i = ft_strlen(s) - 1;
+	i = ft_strlen(s);
 	while (i)
 	{
 		if (!ft_strchr(set, s[i]))
