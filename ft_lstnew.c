@@ -6,7 +6,7 @@
 /*   By: jboeve <marvin@42.fr>                        +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/03 16:48:03 by jboeve        #+#    #+#                 */
-/*   Updated: 2022/11/03 16:57:13 by jboeve        ########   odam.nl         */
+/*   Updated: 2022/11/03 17:28:12 by joppe         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,6 @@ t_list *ft_lstnew(void *content)
 	if (!node)
 		return (NULL);
 	node->content = content;
+	node->next = NULL;
 	return (node);
 }
