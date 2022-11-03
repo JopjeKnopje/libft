@@ -6,26 +6,15 @@
 /*   By: jboeve <jboeve@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/12 10:41:54 by jboeve        #+#    #+#                 */
-/*   Updated: 2022/11/01 18:47:54 by joppe         ########   odam.nl         */
+/*   Updated: 2022/11/03 14:12:49 by jboeve        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
 #ifndef LIBFT_H
-#define LIBFT_H
+# define LIBFT_H
 
-#include <unistd.h>
-#include <stddef.h>
-#include <stdlib.h>
-// For testing
-#include <stdio.h>
-#include <ctype.h>
-#include <string.h>
-#include <assert.h>
-#include <limits.h>
-// assert with message
-#define assert__(x) for ( ; !(x) ; assert(x) )
+# include <unistd.h>
+# include <stdlib.h>
 
 // TODO Add doc in the header file
 int		ft_isalpha(int c);
@@ -35,10 +24,10 @@ int		ft_isascii(int c);
 int		ft_isprint(int c);
 size_t	ft_strlen(const char *c);
 
-void 	*ft_memset(void *s, int c, size_t n);
+void	*ft_memset(void *s, int c, size_t n);
 void	ft_bzero(void *s, size_t n);
-void 	*ft_memcpy(void *dest, const void *src, size_t n);
-void 	*ft_memmove(void *dest, const void *src, size_t n);
+void	*ft_memcpy(void *dest, const void *src, size_t n);
+void	*ft_memmove(void *dest, const void *src, size_t n);
 size_t	ft_strlcpy(char *dest, const char *src, size_t size);
 int		ft_strlcat(char *dest, const char *src, size_t size);
 int		ft_toupper(int c);
@@ -54,14 +43,13 @@ char	*ft_strdup(const char *s);
 int		ft_atoi(const char *nptr);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
-// TODO Maybe reverse the string instead of find_end
 char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
-void 	ft_putstr_fd(char *s, int fd);
-void 	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *s, int fd);
+void	ft_putchar_fd(char c, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 char	*ft_itoa(int n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
-void 	ft_striteri(char *s, void (*f)(unsigned int, char*));
+void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 #endif

@@ -6,7 +6,7 @@
 /*   By: joppe <jboeve@student.codam.nl>              +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/17 00:22:38 by joppe         #+#    #+#                 */
-/*   Updated: 2022/11/03 09:20:17 by joppe         ########   odam.nl         */
+/*   Updated: 2022/11/03 14:14:40 by jboeve        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char	*ft_itoa(int n)
 		return (ft_strdup("0"));
 	sign = (n < 0);
 	i = int_len(n) + sign;
-	s = (char *) malloc(sizeof(char) * (i + 1));
+	s = (char *) malloc(sizeof(char) * (i + 2));
 	if (!s)
 		return (NULL);
 	if (sign)

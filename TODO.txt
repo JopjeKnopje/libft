@@ -31,9 +31,10 @@
 • putstr_fd
 • putendl_fd
 • putnbr_fd
-• strjoin
-• putnbr_fd
 • split
+
+itoa
+strtrim
 
 
 

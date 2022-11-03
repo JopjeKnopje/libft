@@ -6,7 +6,7 @@
 /*   By: joppe <jboeve@student.codam.nl>              +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/10 10:24:25 by joppe         #+#    #+#                 */
-/*   Updated: 2022/10/31 11:29:41 by jboeve        ########   odam.nl         */
+/*   Updated: 2022/11/03 14:09:05 by jboeve        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_strchr(const char *s, int c)
 {
 	int	i;
-	int len;
+	int	len;
 
 	len = ft_strlen(s) + 1;
 	i = 0;
