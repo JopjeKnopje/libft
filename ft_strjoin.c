@@ -6,7 +6,7 @@
 /*   By: joppe <jboeve@student.codam.nl>              +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/12 19:59:09 by joppe         #+#    #+#                 */
-/*   Updated: 2022/11/02 19:14:27 by joppe         ########   odam.nl         */
+/*   Updated: 2022/11/03 09:22:01 by joppe         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	// printf("s1 memcpy %s\n", );
 	if (!ft_memcpy(offset, s2, ft_strlen(s2)))
 		return (NULL);
-	// printf("s2 memcpy %s\n", (buf + ft_strlen(s2)));
-	// printf("total %s\n", buf);
 	buf[total_size] = 0;
 	return (buf);
 }
