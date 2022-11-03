@@ -34,4 +34,14 @@
 • split
 
 
-BONUS: see pdf.
+BONUS
+
+x lstnew
+x lstadd_front
+x lstsize
+x lstlast
+x lstadd_back
+x lstdelone
+x lstclear
+x lstiter
+x lstmap
