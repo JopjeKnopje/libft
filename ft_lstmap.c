@@ -6,7 +6,7 @@
 /*   By: joppe <jboeve@student.codam.nl>              +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/04 12:08:46 by joppe         #+#    #+#                 */
-/*   Updated: 2022/11/04 13:40:50 by jboeve        ########   odam.nl         */
+/*   Updated: 2022/11/04 13:41:44 by jboeve        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 			return (NULL);
 		}
 		new_node->content = f(lst->content);
-		// ft_lstadd_back(&cur_node, new_node);
 		cur_node->next = new_node;
 		cur_node = cur_node->next;
 		lst = lst->next;
