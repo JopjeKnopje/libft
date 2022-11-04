@@ -6,17 +6,17 @@
 /*   By: joppe <jboeve@student.codam.nl>              +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/04 12:08:46 by joppe         #+#    #+#                 */
-/*   Updated: 2022/11/04 13:41:44 by jboeve        ########   odam.nl         */
+/*   Updated: 2022/11/04 13:58:52 by jboeve        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list *new_node;
-	t_list *new_head;
-	t_list *cur_node;
+	t_list	*new_node;
+	t_list	*new_head;
+	t_list	*cur_node;
 
 	if (!lst)
 		return (NULL);
@@ -30,10 +30,7 @@ t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	{
 		new_node = ft_lstnew(NULL);
 		if (!new_node)
-		{
-			ft_lstclear(&new_head, del);
-			return (NULL);
-		}
+			return (ft_lstclear(&new_head, del), NULL);
 		new_node->content = f(lst->content);
 		cur_node->next = new_node;
 		cur_node = cur_node->next;
