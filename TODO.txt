@@ -39,10 +39,9 @@ BONUS
 • lstnew
 • lstadd_front
 • lstsize
-// test with paco
-o lstlast
-x lstadd_back
-x lstdelone
-x lstclear
-x lstiter
+• lstlast
+• lstadd_back
+• lstdelone
+• lstclear
+• lstiter
 x lstmap

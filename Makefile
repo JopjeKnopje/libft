@@ -6,14 +6,13 @@
 #    By: jboeve <jboeve@student.codam.nl>             +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/10/17 12:05:02 by jboeve        #+#    #+#                  #
-#    Updated: 2022/11/04 11:31:21 by jboeve        ########   odam.nl          #
+#    Updated: 2022/11/04 12:10:10 by joppe         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
 # CFLAGS = -Wall -Wextra -Werror -g
-CFLAGS = -g
 
 SRCS = 	ft_atoi.c \
 		ft_bzero.c \
@@ -57,8 +56,8 @@ BONUS_SRCS = ft_lstnew.c \
 		ft_lstadd_back.c \
 		ft_lstdelone.c \
 		ft_lstclear.c \
-		ft_lstiter.c
-		# ft_lstmap.c
+		ft_lstiter.c \
+		ft_lstmap.c
 
 OBJS = $(patsubst %.c, %.o, $(SRCS))
 BONUS_OBJS = $(patsubst %.c, %.o, $(BONUS_SRCS))
