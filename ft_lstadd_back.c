@@ -6,7 +6,7 @@
 /*   By: joppe <jboeve@student.codam.nl>              +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/03 18:17:05 by joppe         #+#    #+#                 */
-/*   Updated: 2022/11/03 23:43:39 by joppe         ########   odam.nl         */
+/*   Updated: 2022/11/04 09:56:10 by joppe         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,18 @@
 
 void ft_lstadd_back(t_list **lst, t_list *new)
 {
-	ft_lstlast(*lst)->next = new;
+
+	t_list *last;
+
+
+	if (!lst || !new)
+		return ;
+	if (!(*lst))
+		*lst = new;
+	else
+	{
+		last = ft_lstlast(*lst);
+		last->next = new;
+	}
+
 }

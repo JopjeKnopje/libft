@@ -6,12 +6,17 @@
 /*   By: jboeve <jboeve@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/12 10:41:54 by jboeve        #+#    #+#                 */
-/*   Updated: 2022/11/03 18:19:02 by joppe         ########   odam.nl         */
+/*   Updated: 2022/11/04 09:57:17 by joppe         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+# define TESTING
+
+# ifdef TESTING
+# include "stdio.h"
+# endif
 
 # include <unistd.h>
 # include <stdlib.h>
