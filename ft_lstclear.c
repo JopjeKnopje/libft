@@ -1,21 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_lstdelone.c                                     :+:    :+:            */
+/*   ft_lstclear.c                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: joppe <jboeve@student.codam.nl>              +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/11/04 09:59:37 by joppe         #+#    #+#                 */
-/*   Updated: 2022/11/04 10:10:22 by joppe         ########   odam.nl         */
+/*   Created: 2022/11/04 10:12:00 by joppe         #+#    #+#                 */
+/*   Updated: 2022/11/04 10:23:29 by joppe         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstdelone(t_list *lst, void (*del)(void*))
+void ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	if (!lst)
-		return ;
-	del(lst->content);
-	free(lst);
+	t_list **head;
+	t_list *tmp;
+
+	head = lst;
+
+	tmp = *lst;
+	del = *lst;
+	while (tmp)
+	{
+		printf("jup %s\n", (char *) tmp->content);
+		free(tmp);
+		tmp = tmp->next;		
+	}
 }

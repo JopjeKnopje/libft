@@ -6,7 +6,7 @@
 #    By: jboeve <jboeve@student.codam.nl>             +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/10/17 12:05:02 by jboeve        #+#    #+#                  #
-#    Updated: 2022/11/04 09:59:15 by joppe         ########   odam.nl          #
+#    Updated: 2022/11/04 10:16:47 by joppe         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,8 +55,8 @@ BONUS_SRCS = ft_lstnew.c \
 		ft_lstsize.c \
 		ft_lstlast.c \
 		ft_lstadd_back.c \
-		ft_lstdelone.c
-		# ft_lstclear.c \
+		ft_lstdelone.c \
+		ft_lstclear.c
 		# ft_lstiter.c \
 		# ft_lstmap.c
 
