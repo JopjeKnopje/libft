@@ -6,13 +6,15 @@
 #    By: jboeve <jboeve@student.codam.nl>             +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/10/17 12:05:02 by jboeve        #+#    #+#                  #
-#    Updated: 2022/11/04 13:33:14 by jboeve        ########   odam.nl          #
+#    Updated: 2022/11/08 20:30:34 by joppe         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
 CFLAGS = -Wall -Wextra -Werror -g
+
+# TODO Add own functions to serperate SRCS
 
 SRCS = 	ft_atoi.c \
 		ft_bzero.c \
@@ -47,7 +49,8 @@ SRCS = 	ft_atoi.c \
 		ft_strtrim.c \
 		ft_substr.c \
 		ft_tolower.c \
-		ft_toupper.c
+		ft_toupper.c \
+		ft_intlen.c
 
 BONUS_SRCS = ft_lstnew.c \
 		ft_lstadd_front.c \
