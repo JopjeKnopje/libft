@@ -6,13 +6,13 @@
 #    By: jboeve <jboeve@student.codam.nl>             +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/10/17 12:05:02 by jboeve        #+#    #+#                  #
-#    Updated: 2022/11/04 13:33:14 by jboeve        ########   odam.nl          #
+#    Updated: 2022/11/08 11:21:06 by jboeve        ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-CFLAGS = -Wall -Wextra -Werror -g
+CFLAGS = -Wall -Wextra -Werror
 
 SRCS = 	ft_atoi.c \
 		ft_bzero.c \
