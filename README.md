@@ -1,6 +1,7 @@
-# libft
-42 libft project
+# Libft
+## 42 libft project
 TODO
 - [ ] Add fancy readme
-- [ ] Move stuff to src obj build etc.
+- [x] Move stuff to src obj build etc.
+- [ ] Maybe remove bonus part and just add that to main part
 - [ ] Add more functions!!!
