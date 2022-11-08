@@ -6,13 +6,13 @@
 #    By: jboeve <jboeve@student.codam.nl>             +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/10/17 12:05:02 by jboeve        #+#    #+#                  #
-#    Updated: 2022/11/08 20:30:34 by joppe         ########   odam.nl          #
+#    Updated: 2022/11/08 20:33:10 by joppe         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-CFLAGS = -Wall -Wextra -Werror -g
+CFLAGS = -Wall -Wextra -Werror
 
 # TODO Add own functions to serperate SRCS
 
