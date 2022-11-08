@@ -6,15 +6,21 @@
 #    By: jboeve <jboeve@student.codam.nl>             +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/10/17 12:05:02 by jboeve        #+#    #+#                  #
-#    Updated: 2022/11/08 20:33:10 by joppe         ########   odam.nl          #
+#    Updated: 2022/11/08 23:06:21 by joppe         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
 CFLAGS = -Wall -Wextra -Werror
+INC_FLAGS = -Iinclude
 
-# TODO Add own functions to serperate SRCS
+SRC_DIR = src
+OBJ_DIR = obj
+INC_DIR = include
+OUT_DIR = build
+
+HEADERS = libft.h
 
 SRCS = 	ft_atoi.c \
 		ft_bzero.c \
@@ -62,28 +68,34 @@ BONUS_SRCS = ft_lstnew.c \
 		ft_lstiter.c \
 		ft_lstmap.c
 
-OBJS = $(patsubst %.c, %.o, $(SRCS))
-BONUS_OBJS = $(patsubst %.c, %.o, $(BONUS_SRCS))
+SRCS := $(addprefix $(SRC_DIR)/, $(SRCS))
+OBJS = $(patsubst $(SRC_DIR)%.c, $(OBJ_DIR)%.o, $(SRCS))
+HEADERS := $(addprefix $(INC_DIR)/, $(HEADERS))
+
+BONUS_SRCS := $(addprefix $(SRC_DIR)/, $(BONUS_SRCS))
+BONUS_OBJS = $(patsubst $(SRC_DIR)%.c, $(OBJ_DIR)%.o, $(BONUS_SRCS))
 
 all: $(NAME)
 
-$(NAME): $(OBJS) libft.h
-	ar rcs $(NAME) $(OBJS)
+$(NAME): $(OBJS) $(HEADERS)
+	@mkdir -p $(OUT_DIR)
+	ar rcs $(OUT_DIR)/$(NAME) $(OBJS)
 
-%.o: $(SRCS)%.c
-	$(CC) $(CFLAGS) -c -o $@ $<
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
+	@mkdir -p $(OBJ_DIR)
+	$(CC) $(CFLAGS) $(INC_FLAGS) -c -o $@ $<
 
 clean:
-	rm -rf $(OBJS) $(BONUS_OBJS)
+	rm -rf $(OBJ_DIR)
 
 fclean: clean
-	rm -f $(NAME)
+	rm -rf $(OUT_DIR)
 
 re: fclean all
 
 bonus: $(NAME) $(BONUS_OBJS)
-	ar rcs $(NAME) $(BONUS_OBJS)
+	ar rcs $(OUT_DIR)/$(NAME) $(BONUS_OBJS)
 
-%.o: $(BONUS_SRCS)%.c
-	$(CC) $(CFLAGS) -c -o $@ $<
+$(OBJ_DIR)/%.o: $(BONUS_SRCS)/%.c
+	$(CC) $(CFLAGS) $(INC_FLAGS) -c -o $@ $<
 

@@ -1,7 +1,4 @@
 .cache/
-*.o
-
-libft.a
+obj/
+build/
 compile_commands.json
-
-
