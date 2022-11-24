@@ -6,7 +6,7 @@
 #    By: jboeve <jboeve@student.codam.nl>             +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/10/17 12:05:02 by jboeve        #+#    #+#                  #
-#    Updated: 2022/11/24 11:05:52 by joppe         ########   odam.nl          #
+#    Updated: 2022/11/24 11:26:32 by joppe         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -94,8 +94,9 @@ fclean: clean
 
 re: fclean all
 
-bonus: $(NAME) $(BONUS_OBJS)
-	ar rcs $(NAME) $(BONUS_OBJS)
+bonus: $(OBJS) $(BONUS_OBJS)
+	@mkdir -p $(OUT_DIR)
+	ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
 
 $(OBJ_DIR)/%.o: $(BONUS_SRCS)/%.c
 	$(CC) $(CFLAGS) $(INC_FLAGS) -c -o $@ $<
