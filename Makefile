@@ -6,7 +6,7 @@
 #    By: jboeve <jboeve@student.codam.nl>             +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/10/17 12:05:02 by jboeve        #+#    #+#                  #
-#    Updated: 2023/01/30 19:13:27 by joppe         ########   odam.nl          #
+#    Updated: 2023/01/30 21:17:22 by joppe         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,8 +20,9 @@ OBJ_DIR = obj
 INC_DIR = include
 OUT_DIR = build
 
-
 HEADERS = libft.h
+SRCS = $(DIR_LST) $(DIR_STRING) $(DIR_ASCII) \
+	   $(DIR_CONVERT) $(DIR_MEM) $(DIR_PRINT)
 
 DIR_ASCII = 	ft_isalnum.c \
 				ft_isalpha.c \
@@ -68,38 +69,30 @@ DIR_LST = 		ft_lstnew.c \
 				ft_lstdelone.c \
 			 	ft_lstclear.c \
 				ft_lstiter.c \
-				lst_lstmap.c
+				ft_lstmap.c
 
-DIR_LST := $(addprefix "lst/", $(DIR_LST))
-DIR_STRING := $(addprefix "str/", $(DIR_STRING))
-DIR_ASCII := $(addprefix "ascii/", $(DIR_ASCII))
-DIR_CONVERT := $(addprefix "convert/", $(DIR_CONVERT))
-DIR_MEM := $(addprefix "mem/", $(DIR_MEM))
-DIR_PRINT := $(addprefix "print/", $(DIR_PRINT))
+DIR_LST := $(addprefix lst/, $(DIR_LST))
+DIR_STRING := $(addprefix str/, $(DIR_STRING))
+DIR_ASCII := $(addprefix ascii/, $(DIR_ASCII))
+DIR_CONVERT := $(addprefix convert/, $(DIR_CONVERT))
+DIR_MEM := $(addprefix mem/, $(DIR_MEM))
+DIR_PRINT := $(addprefix print/, $(DIR_PRINT))
 
-SRCS += $(addprefix $(SRC_DIR)/, $(DIR_LST))
-SRCS += $(addprefix $(SRC_DIR)/, $(DIR_STRING))
-SRCS += $(addprefix $(SRC_DIR)/, $(DIR_ASCII))
-SRCS += $(addprefix $(SRC_DIR)/, $(DIR_CONVERT))
-SRCS += $(addprefix $(SRC_DIR)/, $(DIR_MEM))
-SRCS += $(addprefix $(SRC_DIR)/, $(DIR_PRINT))
+SRCS := $(addprefix $(SRC_DIR)/, $(SRCS))
 
-# OBJS = $(patsubst $(SRC_DIR)%.c, $(OBJ_DIR)%.o, $(SRCS))
-OBJS = $(patsubst %.c, $(OBJ_DIR)%.o, $(SRCS))
+OBJS = $(patsubst $(SRC_DIR)%.c, $(OBJ_DIR)%.o, $(SRCS))
 
 HEADERS := $(addprefix $(INC_DIR)/, $(HEADERS))
 NAME := $(addprefix $(OUT_DIR)/, $(NAME))
 
-# all: $(NAME)
-all:
-	@echo $(OBJS)
+all: $(NAME)
 
 $(NAME): $(OBJS) $(HEADERS)
 	@mkdir -p $(OUT_DIR)
 	ar rcs $(NAME) $(OBJS)
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
-	@mkdir -p $(OBJ_DIR)
+	@mkdir -p $(@D)
 	$(CC) $(CFLAGS) $(INC_FLAGS) -c -o $@ $<
 
 clean:
