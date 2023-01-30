@@ -6,7 +6,7 @@
 #    By: jboeve <jboeve@student.codam.nl>             +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/10/17 12:05:02 by jboeve        #+#    #+#                  #
-#    Updated: 2022/11/13 00:35:46 by joppe         ########   odam.nl          #
+#    Updated: 2023/01/11 12:44:22 by jboeve        ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,7 @@ SRC_DIR = src
 OBJ_DIR = obj
 INC_DIR = include
 OUT_DIR = build
+
 
 HEADERS = libft.h
 
@@ -70,15 +71,22 @@ BONUS_SRCS = ft_lstnew.c \
 SRCS := $(addprefix $(SRC_DIR)/, $(SRCS))
 OBJS = $(patsubst $(SRC_DIR)%.c, $(OBJ_DIR)%.o, $(SRCS))
 HEADERS := $(addprefix $(INC_DIR)/, $(HEADERS))
+NAME := $(addprefix $(OUT_DIR)/, $(NAME))
 
 BONUS_SRCS := $(addprefix $(SRC_DIR)/, $(BONUS_SRCS))
 BONUS_OBJS = $(patsubst $(SRC_DIR)%.c, $(OBJ_DIR)%.o, $(BONUS_SRCS))
 
+ifdef WITH_BONUS
+	OBJ_RAW = $(OBJS) $(BONUS_OBJS)
+else
+	OBJ_RAW = $(OBJS)
+endif
+
 all: $(NAME)
 
-$(NAME): $(OBJS) $(HEADERS)
+$(NAME): $(OBJ_RAW) $(HEADERS)
 	@mkdir -p $(OUT_DIR)
-	ar rcs $(OUT_DIR)/$(NAME) $(OBJS)
+	ar rcs $(NAME) $(OBJ_RAW)
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	@mkdir -p $(OBJ_DIR)
@@ -92,9 +100,8 @@ fclean: clean
 
 re: fclean all
 
-bonus: $(NAME) $(BONUS_OBJS)
-	ar rcs $(OUT_DIR)/$(NAME) $(BONUS_OBJS)
+bonus:
+	@$(MAKE) WITH_BONUS=true all
 
 $(OBJ_DIR)/%.o: $(BONUS_SRCS)/%.c
 	$(CC) $(CFLAGS) $(INC_FLAGS) -c -o $@ $<
-
