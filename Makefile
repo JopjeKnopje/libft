@@ -6,7 +6,7 @@
 #    By: jboeve <jboeve@student.codam.nl>             +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/10/17 12:05:02 by jboeve        #+#    #+#                  #
-#    Updated: 2023/01/11 12:44:22 by jboeve        ########   odam.nl          #
+#    Updated: 2023/01/30 06:56:41 by joppe         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,9 +56,8 @@ SRCS = 	ft_atoi.c \
 		ft_strtrim.c \
 		ft_substr.c \
 		ft_tolower.c \
-		ft_toupper.c
-
-BONUS_SRCS = ft_lstnew.c \
+		ft_toupper.c \
+		ft_lstnew.c \
 		ft_lstadd_front.c \
 		ft_lstsize.c \
 		ft_lstlast.c \
@@ -73,20 +72,11 @@ OBJS = $(patsubst $(SRC_DIR)%.c, $(OBJ_DIR)%.o, $(SRCS))
 HEADERS := $(addprefix $(INC_DIR)/, $(HEADERS))
 NAME := $(addprefix $(OUT_DIR)/, $(NAME))
 
-BONUS_SRCS := $(addprefix $(SRC_DIR)/, $(BONUS_SRCS))
-BONUS_OBJS = $(patsubst $(SRC_DIR)%.c, $(OBJ_DIR)%.o, $(BONUS_SRCS))
-
-ifdef WITH_BONUS
-	OBJ_RAW = $(OBJS) $(BONUS_OBJS)
-else
-	OBJ_RAW = $(OBJS)
-endif
-
 all: $(NAME)
 
-$(NAME): $(OBJ_RAW) $(HEADERS)
+$(NAME): $(OBJS) $(HEADERS)
 	@mkdir -p $(OUT_DIR)
-	ar rcs $(NAME) $(OBJ_RAW)
+	ar rcs $(NAME) $(OBJS)
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	@mkdir -p $(OBJ_DIR)
@@ -99,9 +89,3 @@ fclean: clean
 	rm -rf $(OUT_DIR)
 
 re: fclean all
-
-bonus:
-	@$(MAKE) WITH_BONUS=true all
-
-$(OBJ_DIR)/%.o: $(BONUS_SRCS)/%.c
-	$(CC) $(CFLAGS) $(INC_FLAGS) -c -o $@ $<
