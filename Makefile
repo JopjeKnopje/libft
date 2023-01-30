@@ -6,7 +6,7 @@
 #    By: jboeve <jboeve@student.codam.nl>             +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/10/17 12:05:02 by jboeve        #+#    #+#                  #
-#    Updated: 2023/01/30 21:17:22 by joppe         ########   odam.nl          #
+#    Updated: 2023/01/30 21:30:30 by joppe         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,9 +20,10 @@ OBJ_DIR = obj
 INC_DIR = include
 OUT_DIR = build
 
-HEADERS = libft.h
+HEADERS = libft.h get_next_line.h
 SRCS = $(DIR_LST) $(DIR_STRING) $(DIR_ASCII) \
-	   $(DIR_CONVERT) $(DIR_MEM) $(DIR_PRINT)
+	   $(DIR_CONVERT) $(DIR_MEM) $(DIR_PRINT) \
+	   $(DIR_GNL)
 
 DIR_ASCII = 	ft_isalnum.c \
 				ft_isalpha.c \
@@ -71,12 +72,16 @@ DIR_LST = 		ft_lstnew.c \
 				ft_lstiter.c \
 				ft_lstmap.c
 
+DIR_GNL 	= 	get_next_line.c \
+				get_next_line_utils.c
+
 DIR_LST := $(addprefix lst/, $(DIR_LST))
 DIR_STRING := $(addprefix str/, $(DIR_STRING))
 DIR_ASCII := $(addprefix ascii/, $(DIR_ASCII))
 DIR_CONVERT := $(addprefix convert/, $(DIR_CONVERT))
 DIR_MEM := $(addprefix mem/, $(DIR_MEM))
 DIR_PRINT := $(addprefix print/, $(DIR_PRINT))
+DIR_GNL := $(addprefix gnl/, $(DIR_GNL))
 
 SRCS := $(addprefix $(SRC_DIR)/, $(SRCS))
 
