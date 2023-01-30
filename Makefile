@@ -6,7 +6,7 @@
 #    By: jboeve <jboeve@student.codam.nl>             +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/10/17 12:05:02 by jboeve        #+#    #+#                  #
-#    Updated: 2023/01/30 21:30:30 by joppe         ########   odam.nl          #
+#    Updated: 2023/01/30 22:38:55 by joppe         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,8 +22,8 @@ OUT_DIR = build
 
 HEADERS = libft.h get_next_line.h
 SRCS = $(DIR_LST) $(DIR_STRING) $(DIR_ASCII) \
-	   $(DIR_CONVERT) $(DIR_MEM) $(DIR_PRINT) \
-	   $(DIR_GNL)
+	   $(DIR_CONVERT) $(DIR_MEM) $(DIR_PUT) \
+	   $(DIR_GNL) $(DIR_PRINTF)
 
 DIR_ASCII = 	ft_isalnum.c \
 				ft_isalpha.c \
@@ -58,7 +58,7 @@ DIR_MEM = 		ft_bzero.c \
 				ft_memmove.c \
 				ft_memset.c
 
-DIR_PRINT = 	ft_putchar_fd.c \
+DIR_PUT = 		ft_putchar_fd.c \
 				ft_putendl_fd.c \
 				ft_putnbr_fd.c
 
@@ -80,7 +80,7 @@ DIR_STRING := $(addprefix str/, $(DIR_STRING))
 DIR_ASCII := $(addprefix ascii/, $(DIR_ASCII))
 DIR_CONVERT := $(addprefix convert/, $(DIR_CONVERT))
 DIR_MEM := $(addprefix mem/, $(DIR_MEM))
-DIR_PRINT := $(addprefix print/, $(DIR_PRINT))
+DIR_PUT := $(addprefix put/, $(DIR_PUT))
 DIR_GNL := $(addprefix gnl/, $(DIR_GNL))
 
 SRCS := $(addprefix $(SRC_DIR)/, $(SRCS))
