@@ -6,38 +6,38 @@
 /*   By: joppe <jboeve@student.codam.nl>              +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/21 21:42:18 by joppe         #+#    #+#                 */
-/*   Updated: 2023/01/30 21:35:58 by joppe         ########   odam.nl         */
+/*   Updated: 2023/02/28 08:33:08 by joppe         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
-{
-	size_t	i;
-	size_t	s_len;
-	char	*s_sub;
-
-	i = 0;
-	if (!s)
-		return (NULL);
-	s_len = gnl_strlen((char *) s);
-	if (start > s_len)
-		return (ft_strdup(""));
-	s_len -= start;
-	if (len > s_len)
-		len = s_len;
-	s_sub = malloc(sizeof(char) * (len + 1));
-	if (!s_sub)
-		return (NULL);
-	while (i < len)
-	{
-		s_sub[i] = s[start + i];
-		i++;
-	}
-	s_sub[i] = 0;
-	return (s_sub);
-}
+// char	*ft_substr(char const *s, unsigned int start, size_t len)
+// {
+// 	size_t	i;
+// 	size_t	s_len;
+// 	char	*s_sub;
+//
+// 	i = 0;
+// 	if (!s)
+// 		return (NULL);
+// 	s_len = gnl_strlen((char *) s);
+// 	if (start > s_len)
+// 		return (ft_strdup(""));
+// 	s_len -= start;
+// 	if (len > s_len)
+// 		len = s_len;
+// 	s_sub = malloc(sizeof(char) * (len + 1));
+// 	if (!s_sub)
+// 		return (NULL);
+// 	while (i < len)
+// 	{
+// 		s_sub[i] = s[start + i];
+// 		i++;
+// 	}
+// 	s_sub[i] = 0;
+// 	return (s_sub);
+// }
 
 char	*ft_strchr(const char *s, int c)
 {
