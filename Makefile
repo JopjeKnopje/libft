@@ -6,7 +6,7 @@
 #    By: jboeve <jboeve@student.codam.nl>             +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/10/17 12:05:02 by jboeve        #+#    #+#                  #
-#    Updated: 2023/01/30 22:38:55 by joppe         ########   odam.nl          #
+#    Updated: 2023/03/07 22:23:41 by joppe         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,8 @@ DIR_ASCII = 	ft_isalnum.c \
 DIR_CONVERT = 	ft_itoa.c \
 			  	ft_atoi.c \
 			  	ft_toupper.c \
-			  	ft_tolower.c
+			  	ft_tolower.c \
+			  	ft_atol.c
 
 DIR_STRING = 	ft_split.c \
 				ft_strchr.c \
