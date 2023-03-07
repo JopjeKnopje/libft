@@ -6,17 +6,17 @@
 /*   By: joppe <jboeve@student.codam.nl>              +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/07 22:22:08 by joppe         #+#    #+#                 */
-/*   Updated: 2023/03/07 22:24:07 by joppe         ########   odam.nl         */
+/*   Updated: 2023/03/07 22:27:27 by joppe         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-long ft_atol(const char *s)
+long	ft_atol(const char *s)
 {
 	int		i;
-	long 	num;
 	int		sign;
+	long	num;
 
 	num = 0;
 	sign = 0;
