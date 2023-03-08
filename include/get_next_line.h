@@ -6,7 +6,7 @@
 /*   By: joppe <jboeve@student.codam.nl>              +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/13 16:57:23 by joppe         #+#    #+#                 */
-/*   Updated: 2023/01/30 21:35:26 by joppe         ########   odam.nl         */
+/*   Updated: 2023/03/08 08:54:56 by joppe         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@
 # ifndef OPEN_MAX
 #  define OPEN_MAX 1024
 # endif
-
 
 char	*get_next_line(int fd);
 
