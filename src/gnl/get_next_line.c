@@ -6,7 +6,7 @@
 /*   By: jboeve <marvin@42.fr>                        +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/21 19:26:30 by joppe         #+#    #+#                 */
-/*   Updated: 2023/01/30 21:35:43 by joppe         ########   odam.nl         */
+/*   Updated: 2023/03/08 09:24:43 by joppe         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,14 @@ static	char	*next(char **file_content)
 
 	if (!*file_content)
 		return (NULL);
-	end = ft_strchr(*file_content, '\n') + 1;
+	end = gnl_strchr(*file_content, '\n') + 1;
 	if (!end)
 		end = *file_content + (gnl_strlen(*file_content) * sizeof(char));
 	line_len = end - *file_content;
-	line = ft_substr(*file_content, 0, line_len);
+	line = gnl_substr(*file_content, 0, line_len);
 	if (!line)
 		return (NULL);
-	file_content_new = ft_substr(*file_content, line_len,
+	file_content_new = gnl_substr(*file_content, line_len,
 			gnl_strlen(*file_content) - line_len);
 	if (!file_content_new)
 		return (free(line), NULL);
@@ -58,10 +58,10 @@ static	char	*read_file(char *file_content, int fd)
 			return (file_content);
 		if (r < BUFFER_SIZE)
 			read_buf[r] = 0;
-		file_content = strjoin_free(file_content, read_buf);
+		file_content = gnl_strjoin_free(file_content, read_buf);
 		if (!file_content)
 			return (NULL);
-		if (ft_strchr(read_buf, '\n'))
+		if (gnl_strchr(read_buf, '\n'))
 			break ;
 	}
 	return (file_content);
@@ -75,7 +75,7 @@ char	*get_next_line(int fd)
 	if (fd < 0 || BUFFER_SIZE < 1)
 		return (NULL);
 	if (!file_content[fd])
-		file_content[fd] = ft_strdup("");
+		file_content[fd] = gnl_strdup("");
 	if (!file_content[fd])
 		return (NULL);
 	file_content[fd] = read_file(file_content[fd], fd);

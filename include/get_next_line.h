@@ -6,7 +6,7 @@
 /*   By: joppe <jboeve@student.codam.nl>              +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/13 16:57:23 by joppe         #+#    #+#                 */
-/*   Updated: 2023/03/08 08:54:56 by joppe         ########   odam.nl         */
+/*   Updated: 2023/03/08 09:24:24 by joppe         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@
 
 char	*get_next_line(int fd);
 
-char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*gnl_substr(char const *s, unsigned int start, size_t len);
 int		gnl_strlen(char *s);
-char	*ft_strchr(const char *s, int c);
-char	*ft_strdup(const char *s);
-char	*strjoin_free(char *s_base, char *s_append);
+char	*gnl_strchr(const char *s, int c);
+char	*gnl_strdup(const char *s);
+char	*gnl_strjoin_free(char *s_base, char *s_append);
 
 #endif

@@ -6,40 +6,40 @@
 /*   By: joppe <jboeve@student.codam.nl>              +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/21 21:42:18 by joppe         #+#    #+#                 */
-/*   Updated: 2023/02/28 08:33:08 by joppe         ########   odam.nl         */
+/*   Updated: 2023/03/08 09:24:56 by joppe         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-// char	*ft_substr(char const *s, unsigned int start, size_t len)
-// {
-// 	size_t	i;
-// 	size_t	s_len;
-// 	char	*s_sub;
-//
-// 	i = 0;
-// 	if (!s)
-// 		return (NULL);
-// 	s_len = gnl_strlen((char *) s);
-// 	if (start > s_len)
-// 		return (ft_strdup(""));
-// 	s_len -= start;
-// 	if (len > s_len)
-// 		len = s_len;
-// 	s_sub = malloc(sizeof(char) * (len + 1));
-// 	if (!s_sub)
-// 		return (NULL);
-// 	while (i < len)
-// 	{
-// 		s_sub[i] = s[start + i];
-// 		i++;
-// 	}
-// 	s_sub[i] = 0;
-// 	return (s_sub);
-// }
+char	*gnl_substr(char const *s, unsigned int start, size_t len)
+{
+	size_t	i;
+	size_t	s_len;
+	char	*s_sub;
 
-char	*ft_strchr(const char *s, int c)
+	i = 0;
+	if (!s)
+		return (NULL);
+	s_len = gnl_strlen((char *) s);
+	if (start > s_len)
+		return (gnl_strdup(""));
+	s_len -= start;
+	if (len > s_len)
+		len = s_len;
+	s_sub = malloc(sizeof(char) * (len + 1));
+	if (!s_sub)
+		return (NULL);
+	while (i < len)
+	{
+		s_sub[i] = s[start + i];
+		i++;
+	}
+	s_sub[i] = 0;
+	return (s_sub);
+}
+
+char	*gnl_strchr(const char *s, int c)
 {
 	int	i;
 	int	len;
@@ -65,7 +65,7 @@ int	gnl_strlen(char *s)
 	return (i);
 }
 
-char	*ft_strdup(const char *s)
+char	*gnl_strdup(const char *s)
 {
 	int		i;
 	int		len;
@@ -85,7 +85,7 @@ char	*ft_strdup(const char *s)
 	return (buffer);
 }
 
-char	*strjoin_free(char *s_base, char *s_append)
+char	*gnl_strjoin_free(char *s_base, char *s_append)
 {
 	int		i;
 	int		len_base;

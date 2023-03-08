@@ -6,13 +6,13 @@
 #    By: jboeve <jboeve@student.codam.nl>             +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/10/17 12:05:02 by jboeve        #+#    #+#                  #
-#    Updated: 2023/03/07 22:23:41 by joppe         ########   odam.nl          #
+#    Updated: 2023/03/08 09:28:32 by joppe         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g
 INC_FLAGS = -Iinclude
 
 SRC_DIR = src
@@ -49,7 +49,8 @@ DIR_STRING = 	ft_split.c \
 				ft_strnstr.c \
 				ft_strrchr.c \
 				ft_strtrim.c \
-				ft_substr.c
+				ft_substr.c \
+				ft_strdup.c
 
 DIR_MEM = 		ft_bzero.c \
 				ft_calloc.c \
