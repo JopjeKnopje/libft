@@ -6,7 +6,7 @@
 #    By: jboeve <jboeve@student.codam.nl>             +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/10/17 12:05:02 by jboeve        #+#    #+#                  #
-#    Updated: 2023/03/08 09:28:32 by joppe         ########   odam.nl          #
+#    Updated: 2023/03/08 11:38:16 by jboeve        ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,7 +62,8 @@ DIR_MEM = 		ft_bzero.c \
 
 DIR_PUT = 		ft_putchar_fd.c \
 				ft_putendl_fd.c \
-				ft_putnbr_fd.c
+				ft_putnbr_fd.c \
+				ft_putstr_fd.c
 
 DIR_LST = 		ft_lstnew.c \
 				ft_lstadd_front.c \
