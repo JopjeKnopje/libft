@@ -6,7 +6,7 @@
 #    By: jboeve <jboeve@student.codam.nl>             +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/10/17 12:05:02 by jboeve        #+#    #+#                  #
-#    Updated: 2023/03/08 11:38:16 by jboeve        ########   odam.nl          #
+#    Updated: 2023/03/18 21:58:06 by joppe         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,6 +41,7 @@ DIR_STRING = 	ft_split.c \
 				ft_strchr.c \
 				ft_striteri.c \
 				ft_strjoin.c \
+				ft_strjoin_free.c \
 				ft_strlcat.c \
 				ft_strlcpy.c \
 				ft_strlen.c \
