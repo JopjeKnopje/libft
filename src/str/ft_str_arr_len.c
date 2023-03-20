@@ -6,11 +6,11 @@
 /*   By: joppe <jboeve@student.codam.nl>              +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/20 22:59:08 by joppe         #+#    #+#                 */
-/*   Updated: 2023/03/20 22:59:19 by joppe         ########   odam.nl         */
+/*   Updated: 2023/03/20 23:00:49 by joppe         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	str_arr_len(char **arr)
+int	ft_str_arr_len(char **arr)
 {
 	int	i;
 
