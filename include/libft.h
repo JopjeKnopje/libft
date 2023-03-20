@@ -6,7 +6,7 @@
 /*   By: jboeve <jboeve@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/12 10:41:54 by jboeve        #+#    #+#                 */
-/*   Updated: 2023/03/18 22:01:31 by joppe         ########   odam.nl         */
+/*   Updated: 2023/03/20 22:59:46 by joppe         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ char	*ft_itoa(int n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 long	ft_atol(const char *s);
+int		str_arr_len(char **arr);
 
 typedef struct s_list
 {
