@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         ::::::::             #
-#    Makefile                                           :+:    :+:             #
+#    Makefile                                          :+:    :+:              #
 #                                                      +:+                     #
 #    By: jboeve <jboeve@student.codam.nl>             +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/10/17 12:05:02 by jboeve        #+#    #+#                  #
-#    Updated: 2023/05/08 15:13:38 by jboeve        ########   odam.nl          #
+#    Updated: 2023/05/19 23:43:33 by joppe         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,6 +35,7 @@ DIR_CONVERT = 	ft_itoa.c \
 			  	ft_atoi.c \
 			  	ft_toupper.c \
 			  	ft_tolower.c \
+			  	ft_atoi_hex.c \
 			  	ft_atol.c
 
 DIR_STRING = 	ft_split.c \
