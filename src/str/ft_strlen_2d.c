@@ -1,27 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_calloc.c                                       :+:    :+:             */
+/*   ft_strlen_2d.c                                    :+:    :+:             */
 /*                                                     +:+                    */
 /*   By: joppe <jboeve@student.codam.nl>              +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/10/10 19:15:59 by joppe         #+#    #+#                 */
-/*   Updated: 2023/08/29 23:15:32 by joppe         ########   odam.nl         */
+/*   Created: 2023/03/20 22:59:08 by joppe         #+#    #+#                 */
+/*   Updated: 2023/08/20 23:16:51 by joppe         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	*ft_calloc(size_t nmemb, size_t size)
+int	ft_strlen_2d(char **arr)
 {
-	size_t	buf_size;
-	void	*buffer;
+	int	i;
 
-	buf_size = nmemb * size;
-	buffer = malloc(buf_size);
-	if (buffer)
-		ft_bzero(buffer, buf_size);
-	else
-		return (NULL);
-	return (buffer);
+	i = 0;
+	while (arr[i])
+		i++;
+	return (i);
 }

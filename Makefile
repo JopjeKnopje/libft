@@ -6,13 +6,14 @@
 #    By: jboeve <jboeve@student.codam.nl>             +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/10/17 12:05:02 by jboeve        #+#    #+#                  #
-#    Updated: 2023/05/19 23:43:33 by joppe         ########   odam.nl          #
+#    Updated: 2023/08/29 23:14:12 by joppe         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
 CFLAGS = -Wall -Wextra -Werror -g
+# CFLAGS = -Wall -Wextra -Werror
 INC_FLAGS = -Iinclude
 
 SRC_DIR = src
@@ -23,7 +24,7 @@ OUT_DIR = build
 HEADERS = libft.h get_next_line.h
 SRCS = $(DIR_LST) $(DIR_STRING) $(DIR_ASCII) \
 	   $(DIR_CONVERT) $(DIR_MEM) $(DIR_PUT) \
-	   $(DIR_GNL) $(DIR_PRINTF)
+	   $(DIR_GNL)
 
 DIR_ASCII = 	ft_isalnum.c \
 				ft_isalpha.c \
@@ -53,7 +54,7 @@ DIR_STRING = 	ft_split.c \
 				ft_strtrim.c \
 				ft_substr.c \
 				ft_strdup.c \
-				ft_str_arr_len.c \
+				ft_strlen_2d.c \
 				ft_strisempty.c
 
 DIR_MEM = 		ft_bzero.c \
