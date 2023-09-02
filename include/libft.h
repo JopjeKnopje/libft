@@ -6,7 +6,7 @@
 /*   By: jboeve <jboeve@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/12 10:41:54 by jboeve        #+#    #+#                 */
-/*   Updated: 2023/08/20 23:16:51 by joppe         ########   odam.nl         */
+/*   Updated: 2023/09/02 23:04:00 by joppe         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ int			ft_strlen_2d(char **arr);
 int			ft_strisempty(char *s);
 uint32_t	ft_atoi_hex(const char *s);
 void		*ft_realloc(void *ptr, size_t size_old, size_t size_new);
+void		ft_strfree_2d(char **s);
 
 typedef struct s_list
 {

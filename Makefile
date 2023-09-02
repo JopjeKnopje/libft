@@ -6,7 +6,7 @@
 #    By: jboeve <jboeve@student.codam.nl>             +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/10/17 12:05:02 by jboeve        #+#    #+#                  #
-#    Updated: 2023/08/29 23:14:12 by joppe         ########   odam.nl          #
+#    Updated: 2023/09/02 23:04:47 by joppe         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,6 +55,7 @@ DIR_STRING = 	ft_split.c \
 				ft_substr.c \
 				ft_strdup.c \
 				ft_strlen_2d.c \
+				ft_strfree_2d.c \
 				ft_strisempty.c
 
 DIR_MEM = 		ft_bzero.c \
